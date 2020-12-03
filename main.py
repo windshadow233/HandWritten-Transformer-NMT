@@ -30,13 +30,13 @@ dataset = CorpusDataset('data/corpus/train_en', 'data/corpus/train_cn', 'data/vo
 dataloader = DataLoader(dataset, batch_size=32, shuffle=True, collate_fn=sentence_collate_fn)
 optimizer = Adam(transform.parameters(), lr=2e-5)
 loss_fcn = nn.CrossEntropyLoss(ignore_index=0)
-# for epoch in range(epochs):
-#     for src, tgt in tqdm.tqdm(dataloader, desc='Epoch_%s' % epoch):
-#         src = src.to(device)
-#         tgt = tgt.to(device)
-#         output, label = transform(src, tgt)
-#         loss = loss_fcn(output.transpose(1, 2), label)
-#         print('Loss: ', loss.item())
-#         loss.backward()
-#         optimizer.step()
-#         optimizer.zero_grad()
+for epoch in range(epochs):
+    for src, tgt in tqdm.tqdm(dataloader, desc='Epoch_%s' % epoch):
+        src = src.to(device)
+        tgt = tgt.to(device)
+        output, label = transform(src, tgt)
+        loss = loss_fcn(output.transpose(1, 2), label)
+        print('Loss: ', loss.item())
+        loss.backward()
+        optimizer.step()
+        optimizer.zero_grad()
