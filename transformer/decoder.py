@@ -36,9 +36,7 @@ class Decoder(nn.Module):
         self.embedding_dim = config.embedding_dim
         self.max_len = config.max_seq_len
 
-        self.tgt_word_emb = nn.Embedding(self.vocab_size, self.embedding_dim)
-        self.positional_encoding = PositionalEncoding(config)
-        self.dropout = nn.Dropout(config.hidden_dropout)
+        self.word_embedding = Embedding(config)
         self.layers = nn.ModuleList([DecodeLayer(config) for _ in range(self.num_hidden_layers)])
         self.tgt_word_prj = nn.Linear(self.embedding_dim, self.vocab_size, bias=False)
 
@@ -61,7 +59,7 @@ class Decoder(nn.Module):
         self_attn_mask = ((self_attn_mask + self_attn_mask_subseq) > 0).float()
         dec_enc_attn_mask = get_attention_mask(padded_src, ys_in_pad, pad_idx=self.pad_idx)
 
-        decode_output = self.tgt_word_emb(ys_in_pad) + self.positional_encoding(ys_in_pad)
+        decode_output = self.word_embedding(ys_in_pad)
         for layer in self.layers:
             decode_output = layer(decode_output, encoder_output, pad_mask, self_attn_mask, dec_enc_attn_mask)
         decode_output = self.tgt_word_prj(decode_output)

@@ -33,17 +33,17 @@ class PositionalEncoding(nn.Module):
 
     @staticmethod
     def get_positional_enc(max_seq_len, embedding_dim):
-        position_embed = np.array([
+        position_code = np.array([
             [pos / np.power(10000, 2 * i / embedding_dim) for i in range(embedding_dim)]
             if pos != 0 else np.zeros(embedding_dim) for pos in range(max_seq_len)
         ])
-        position_embed[1:, 0::2] = np.sin(position_embed[1:, 0::2])
-        position_embed[1:, 1::2] = np.cos(position_embed[1:, 1::2])
+        position_code[1:, 0::2] = np.sin(position_code[1:, 0::2])
+        position_code[1:, 1::2] = np.cos(position_code[1:, 1::2])
         # 每一行做标准化
-        s = position_embed.sum(axis=-1, keepdims=True)
-        position_embed = position_embed / np.sqrt(s + 1e-5)
-        position_embed = torch.from_numpy(position_embed).float()
-        return position_embed
+        s = position_code.sum(axis=-1, keepdims=True)
+        position_code = position_code / np.sqrt(s + 1e-5)
+        position_code = torch.from_numpy(position_code).float()
+        return position_code
 
     def forward(self, x):
         """
