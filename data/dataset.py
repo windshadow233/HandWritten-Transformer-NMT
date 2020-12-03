@@ -26,11 +26,11 @@ class CorpusDataset(Dataset):
         src_sen = self.src_sentences[item].strip()
         tgt_sen = self.tgt_sentences[item].strip()
         src_token = self.sentence2token(src_sen, 'en')
-        tgt_token = self.sentence2token(tgt_sen, 'zh')
+        tgt_token = self.sentence2token(tgt_sen, 'cn')
         return src_token, tgt_token
 
     def sentence2token(self, sentence, lang='en'):
-        assert lang in {'en', 'zh'}
+        assert lang in {'en', 'cn'}
         char2idx = self.src_char2idx if lang == 'en' else self.tgt_char2idx
         if lang == 'en':
             sentence = [normalize_string(s.strip()) for s in nltk.word_tokenize(sentence)]
@@ -40,6 +40,11 @@ class CorpusDataset(Dataset):
         return torch.tensor([char2idx.get(word, char2idx['<unk>']) for word in sentence], dtype=torch.long)
 
     def token2sentence(self, token, lang='en'):
-        assert lang in {'en', 'zh'}
+        assert lang in {'en', 'cn'}
+        if isinstance(token, torch.Tensor):
+            token = token.tolist()
         idx2char = self.src_idx2char if lang == 'en' else self.tgt_idx2char
-        return [idx2char.get(idx) for idx in token]
+        sentence = [idx2char.get(idx) for idx in token if idx != 0]
+        if lang == 'en':
+            return ' '.join(sentence)
+        return ''.join(sentence)

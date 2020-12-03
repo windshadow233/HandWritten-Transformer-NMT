@@ -43,23 +43,19 @@ class Decoder(nn.Module):
         self.tgt_word_prj = nn.Linear(self.embedding_dim, self.vocab_size, bias=False)
 
     def pre_process(self, padded_target: torch.Tensor):
-        """
-        输出两个序列,1:在句前添加<sos>;2:在句末添加<eos>
-        :param padded_target: 输入序列
-        """
         # batch_size, seq_len = padded_target.shape
         # sos = padded_target.new_ones(size=(batch_size, 1)) * self.sos_idx
         # eos = padded_target.new_ones(size=(batch_size, 1)) * self.eos_idx
         # return torch.cat([sos, padded_target], dim=1), torch.cat([padded_target, eos], dim=1)
-        ys_in_pad = padded_target[:, 1:]
-        ys_out_pad = padded_target
-        ys_out_pad[ys_out_pad == self.eos_idx] = 0
-        ys_out_pad = ys_out_pad[:, :-1]
+        ys_in_pad = padded_target.clone()
+        ys_in_pad[ys_in_pad == self.eos_idx] = 0
+        ys_in_pad = ys_in_pad[:, :-1]
+        ys_out_pad = padded_target[:, 1:]
         return ys_in_pad, ys_out_pad
 
     def forward(self, padded_target, padded_src, encoder_output):
         ys_in_pad, ys_out_pad = self.pre_process(padded_target)
-        pad_mask = get_pad_mask(ys_in_pad)
+        pad_mask = get_pad_mask(ys_in_pad, self.pad_idx)
         self_attn_mask_subseq = get_subsequent_mask(ys_in_pad)
         self_attn_mask = get_attention_mask(ys_in_pad, ys_in_pad, pad_idx=self.pad_idx)
         self_attn_mask = ((self_attn_mask + self_attn_mask_subseq) > 0).float()

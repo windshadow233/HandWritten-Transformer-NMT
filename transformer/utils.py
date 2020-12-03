@@ -1,28 +1,21 @@
 import torch
-from configparser import ConfigParser
 
 
-parser = ConfigParser()
-parser.read('./config.ini', encoding='utf-8')
-model_config = parser['model_config']
-pad_idx = model_config.getint('pad_idx')
-
-
-def get_pad_mask(sequences, pad_idx=pad_idx):
+def get_pad_mask(padded_seq, pad_idx):
     """
-    :param sequences: (B, L)
-    :param pad_idx: 0
+    输入序列矩阵
+    数值为pad_idx的置为0,其余置为1
     """
-    pad_mask = torch.ones_like(sequences, dtype=torch.float32)
-    pad_mask[sequences == pad_idx] = 0
+    pad_mask = torch.ones_like(padded_seq, dtype=torch.float32)
+    pad_mask[padded_seq == pad_idx] = 0
     return pad_mask
 
 
-def get_attention_mask(seq_k, seq_q, pad_idx=pad_idx):
+def get_attention_mask(seq_k, seq_q, pad_idx):
     seq_len = seq_q.shape[1]
-    padding_mask = seq_k.eq(pad_idx)
-    padding_mask = padding_mask.unsqueeze(1).expand(-1, seq_len, -1).float()
-    return padding_mask
+    pad_mask = seq_k.eq(pad_idx)
+    pad_mask = pad_mask.unsqueeze(1).expand(-1, seq_len, -1).float()
+    return pad_mask
 
 
 def get_subsequent_mask(sequences):

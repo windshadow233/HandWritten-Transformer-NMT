@@ -93,29 +93,29 @@ class MultiHeadSelfAttention(nn.Module):
         """
 
         Args:
-            q: (B, L, D)
-            k: (B, L, D)
-            v: (B, L, D)
-            attention_mask: (B, L, L)
+            q: (B, L1, D)
+            k: (B, L2, D)
+            v: (B, L2, D)
+            attention_mask: (B, L1, L2)
             get_attention_mat: 是否获取注意力矩阵
 
-        Returns: hidden_layer: (B, L, D), attention_probs: (B, H, L, L)
+        Returns: hidden_layer: (B, L1, D), attention_probs: (B, H, L1, L2)
 
         """
         attention_mask = attention_mask * -10000
-        query = self.Q(q)  # (B, L, D)
-        key = self.K(k)  # (B, L, D)
-        value = self.V(v)  # (B, L, D)
-        multi_heads_q = self.get_multi_heads(query)  # (B, H, L, D // H)
-        multi_heads_k = self.get_multi_heads(key)  # (B, H, L, D // H)
-        multi_heads_v = self.get_multi_heads(value)  # (B, H, L, D // H)
-        attention_mat = multi_heads_q.matmul(multi_heads_k.transpose(-1, -2)) / math.sqrt(self.attention_head_size)  # (B, H, L, L)
-        attention_mat = attention_mat + attention_mask[:, None]  # (B, H, L, L) + (B, L, L) => (B, H, L, L)
-        attention_probs = nn.functional.softmax(attention_mat, dim=-1)
+        query = self.Q(q)  # (B, L1, D)
+        key = self.K(k)  # (B, L2, D)
+        value = self.V(v)  # (B, L2, D)
+        multi_heads_q = self.get_multi_heads(query)  # (B, H, L1, D // H)
+        multi_heads_k = self.get_multi_heads(key)  # (B, H, L2, D // H)
+        multi_heads_v = self.get_multi_heads(value)  # (B, H, L2, D // H)
+        attention_mat = multi_heads_q.matmul(multi_heads_k.transpose(-1, -2)) / math.sqrt(self.attention_head_size)  # (B, H, L1, L2)
+        attention_mat = attention_mat + attention_mask[:, None]  # (B, H, L1, L2) + (B, 1, L1, L2) => (B, H, L1, L2)
+        attention_probs = nn.functional.softmax(attention_mat, dim=-1)  # (B, H, L1, L2)
         attention_probs = self.dropout(attention_probs)
-        hidden_layer = attention_probs.matmul(multi_heads_v).transpose(1, 2)  # (B, L, H, D // h)
+        hidden_layer = attention_probs.matmul(multi_heads_v).transpose(1, 2)  # (B, L1, H, D // h)
         new_output_layer_shape = hidden_layer.shape[:-2] + (self.embedding_dim,)
-        hidden_layer = hidden_layer.reshape(new_output_layer_shape)  # (B, L, D)
+        hidden_layer = hidden_layer.reshape(new_output_layer_shape)  # (B, L1, D)
         if get_attention_mat:
             return hidden_layer, attention_probs
         return hidden_layer, None

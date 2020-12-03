@@ -34,6 +34,7 @@ class EncodeLayer(nn.Module):
 class Encoder(nn.Module):
     def __init__(self, config: Config):
         super(Encoder, self).__init__()
+        self.pad_idx = config.pad_idx
         self.word_embedding = Embedding(config)
         self.layers = nn.ModuleList([EncodeLayer(config) for _ in range(config.num_hidden_layers)])
 
@@ -48,8 +49,8 @@ class Encoder(nn.Module):
         Returns: encoded_layers: [(B, L, D) * n] or (B, L, D) attention_mats: [(B, H, D, D) * n] or None
 
         """
-        pad_mask = get_pad_mask(x)
-        attention_mask = get_attention_mask(x, x)
+        pad_mask = get_pad_mask(x, pad_idx=self.pad_idx)
+        attention_mask = get_attention_mask(x, x, pad_idx=self.pad_idx)
         attention_mats = [] if get_attention_mat else None
         encoded_layers = []
         hidden_layer = self.word_embedding(x)
