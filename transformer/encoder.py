@@ -50,7 +50,7 @@ class Encoder(nn.Module):
 
         """
         pad_mask = get_pad_mask(x, pad_idx=self.pad_idx)
-        attention_mask = get_attention_mask(x, x, pad_idx=self.pad_idx)
+        attention_mask = get_attention_key_mask(x, x, pad_idx=self.pad_idx)
         attention_mats = [] if get_attention_mat else None
         encoded_layers = []
         hidden_layer = self.word_embedding(x)

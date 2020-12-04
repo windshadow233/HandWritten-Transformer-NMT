@@ -11,7 +11,7 @@ def get_pad_mask(padded_seq, pad_idx):
     return pad_mask
 
 
-def get_attention_mask(seq_k, seq_q, pad_idx):
+def get_attention_key_mask(seq_k, seq_q, pad_idx):
     seq_len = seq_q.shape[1]
     pad_mask = seq_k.eq(pad_idx)
     pad_mask = pad_mask.unsqueeze(1).expand(-1, seq_len, -1).float()

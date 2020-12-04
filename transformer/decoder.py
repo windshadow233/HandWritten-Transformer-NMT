@@ -55,9 +55,9 @@ class Decoder(nn.Module):
         input_data, target = self.pre_process(padded_target)
         pad_mask = get_pad_mask(input_data, self.pad_idx)
         self_attn_mask_subseq = get_subsequent_mask(input_data)
-        self_attn_mask = get_attention_mask(input_data, input_data, pad_idx=self.pad_idx)
+        self_attn_mask = get_attention_key_mask(input_data, input_data, pad_idx=self.pad_idx)
         self_attn_mask = ((self_attn_mask + self_attn_mask_subseq) > 0).float()
-        dec_enc_attn_mask = get_attention_mask(padded_src, input_data, pad_idx=self.pad_idx)
+        dec_enc_attn_mask = get_attention_key_mask(padded_src, input_data, pad_idx=self.pad_idx)
 
         decode_output = self.word_embedding(input_data)
         for layer in self.layers:

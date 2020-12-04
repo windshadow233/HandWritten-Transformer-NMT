@@ -43,7 +43,7 @@ class Transformer(nn.Module):
         next_possible_sentences.sort(key=lambda x: x[1], reverse=True)
         return next_possible_sentences[:beam_size]
 
-    def beam_search(self, input_seq: torch.Tensor, max_len=100, beam_size=5):
+    def beam_search(self, input_seq, max_len=100, beam_size=5):
         """
         对一个句子进行解码
         :param input_seq: (L,)
