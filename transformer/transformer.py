@@ -54,7 +54,7 @@ class Transformer(nn.Module):
         input_seq = input_seq[None]  # (1, L)
         encoder_output = self.encoder(input_seq)[0]  # (1, L, D)
         sos = input_seq.new_full(size=(1, 1), fill_value=self.sos_idx)
-        pred = [(torch.cat([sos], dim=1), input_seq.new_zeros(size=(1, 1), dtype=torch.float32))]
+        pred = [(torch.cat([sos], dim=1), input_seq.new_zeros(size=(1,), dtype=torch.float32))]
         for _ in range(max_len):
             pred = self.predict_next(pred, input_seq, encoder_output, beam_size)
         return pred[0]
