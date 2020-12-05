@@ -1,15 +1,7 @@
-import torch
-from configparser import ConfigParser
 from transformer.transformer import Transformer, Config
+from config import *
 
-parser = ConfigParser()
-parser.read('../config.ini', encoding='utf-8')
-model_config = parser['model_config']
-pad_idx = model_config.getint('pad_idx')
-sos_idx = model_config.getint('sos_idx')
-eos_idx = model_config.getint('eos_idx')
-vocab_size = model_config.getint('vocab_size')
-device = torch.device('cuda:0')
+
 model = Transformer(Config(model_config))
 model.load_state_dict(torch.load('../model/transformer.pkl'))
 model.to(device).eval()
