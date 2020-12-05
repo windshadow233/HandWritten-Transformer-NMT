@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2a75ad3-cbcf-4863-8b2e-c69877cd32d7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/vocab.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/vocab.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transformer/decoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/transformer/decoder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transformer/encoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/transformer/encoder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/transformer/transformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/transformer/transformer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transformer/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/transformer/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +26,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1kufCOhzGSWDJ3KPqwSlDWyOcDc" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -37,14 +40,56 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../lab3" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\深度学习实验\lab4\evaluation" />
+      <recent name="F:\深度学习实验\lab4\data" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\深度学习实验\lab4" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\深度学习实验\lab4\data" />
-    </key>
   </component>
-  <component name="RunManager" selected="Python.main">
+  <component name="RunManager" selected="Python.bleu">
+    <configuration name="beam_search" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="lab4" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/evaluation" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/evaluation/beam_search.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="bleu" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="lab4" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/evaluation" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/evaluation/bleu.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="data_preprocess" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="lab4" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -61,28 +106,6 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/data_preprocess.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="decoder" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="lab4" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/transformer" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/transformer/decoder.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -112,38 +135,13 @@
       <module name="lab4" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/transformer-master" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/transformer-master/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="transformer" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="lab4" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/transformer" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/transformer/transformer.py" />
+      <option name="SCRIPT_NAME" value="F:\深度学习实验\lab4\evaluation\test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -153,18 +151,18 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.test" />
-      <item itemvalue="Python.decoder" />
-      <item itemvalue="Python.transformer" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.data_preprocess" />
+      <item itemvalue="Python.test" />
+      <item itemvalue="Python.beam_search" />
+      <item itemvalue="Python.bleu" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.bleu" />
+        <item itemvalue="Python.beam_search" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.decoder" />
         <item itemvalue="Python.data_preprocess" />
-        <item itemvalue="Python.transformer" />
         <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
@@ -184,7 +182,10 @@
       <workItem from="1606903906676" duration="25132000" />
       <workItem from="1606973253837" duration="3335000" />
       <workItem from="1606977691315" duration="37377000" />
-      <workItem from="1607051761444" duration="18114000" />
+      <workItem from="1607051761444" duration="32933000" />
+      <workItem from="1607145809183" duration="3251000" />
+      <workItem from="1607149670224" duration="604000" />
+      <workItem from="1607150767117" duration="25436000" />
     </task>
     <servers />
   </component>
@@ -192,10 +193,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606976515603">
+    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607189350898">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1606976515603" />
+    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1607189350898" />
     <state x="511" y="235" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606909805122">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -204,46 +205,46 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="883" y="182" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.864@0.0.1536.864" timestamp="1606567178133" />
-    <state x="855" y="269" key="#xdebugger.evaluate" timestamp="1607066115027">
+    <state x="855" y="269" key="#xdebugger.evaluate" timestamp="1607184758616">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="855" y="269" key="#xdebugger.evaluate/0.0.1536.864@0.0.1536.864" timestamp="1607066115027" />
+    <state x="855" y="269" key="#xdebugger.evaluate/0.0.1536.864@0.0.1536.864" timestamp="1607184758616" />
     <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1606977694165">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1606977694165" />
-    <state width="1493" height="401" key="GridCell.Tab.0.bottom" timestamp="1607066116645">
+    <state width="1493" height="375" key="GridCell.Tab.0.bottom" timestamp="1607189346147">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="401" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607066116645" />
-    <state width="1493" height="401" key="GridCell.Tab.0.center" timestamp="1607066116645">
+    <state width="1493" height="375" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607189346147" />
+    <state width="1493" height="375" key="GridCell.Tab.0.center" timestamp="1607189346146">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="401" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1607066116645" />
-    <state width="1493" height="401" key="GridCell.Tab.0.left" timestamp="1607066116645">
+    <state width="1493" height="375" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1607189346146" />
+    <state width="1493" height="375" key="GridCell.Tab.0.left" timestamp="1607189346146">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="401" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1607066116645" />
-    <state width="1493" height="401" key="GridCell.Tab.0.right" timestamp="1607066116645">
+    <state width="1493" height="375" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1607189346146" />
+    <state width="1493" height="375" key="GridCell.Tab.0.right" timestamp="1607189346146">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="401" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1607066116645" />
-    <state width="1493" height="401" key="GridCell.Tab.1.bottom" timestamp="1607066116645">
+    <state width="1493" height="375" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1607189346146" />
+    <state width="1493" height="401" key="GridCell.Tab.1.bottom" timestamp="1607184859889">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="401" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607066116645" />
-    <state width="1493" height="401" key="GridCell.Tab.1.center" timestamp="1607066116645">
+    <state width="1493" height="401" key="GridCell.Tab.1.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607184859889" />
+    <state width="1493" height="401" key="GridCell.Tab.1.center" timestamp="1607184859889">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="401" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1607066116645" />
-    <state width="1493" height="401" key="GridCell.Tab.1.left" timestamp="1607066116645">
+    <state width="1493" height="401" key="GridCell.Tab.1.center/0.0.1536.864@0.0.1536.864" timestamp="1607184859889" />
+    <state width="1493" height="401" key="GridCell.Tab.1.left" timestamp="1607184859889">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="401" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1607066116645" />
-    <state width="1493" height="401" key="GridCell.Tab.1.right" timestamp="1607066116645">
+    <state width="1493" height="401" key="GridCell.Tab.1.left/0.0.1536.864@0.0.1536.864" timestamp="1607184859889" />
+    <state width="1493" height="401" key="GridCell.Tab.1.right" timestamp="1607184859889">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="401" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1607066116645" />
+    <state width="1493" height="401" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1607184859889" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -262,11 +263,14 @@
     <SUITE FILE_PATH="coverage/lab4$main.coverage" NAME="main Coverage Results" MODIFIED="1606976511336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/lab4$pre_process.coverage" NAME="pre_process Coverage Results" MODIFIED="1606566012148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
     <SUITE FILE_PATH="coverage/lab4$dataset.coverage" NAME="dataset Coverage Results" MODIFIED="1606895420261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
-    <SUITE FILE_PATH="coverage/lab4$test.coverage" NAME="test Coverage Results" MODIFIED="1606919228322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/transformer-master" />
+    <SUITE FILE_PATH="coverage/lab4$test.coverage" NAME="test Coverage Results" MODIFIED="1607106446419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/lab4$pre_proccess.coverage" NAME="pre_proccess Coverage Results" MODIFIED="1606562607569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
     <SUITE FILE_PATH="coverage/lab4$train.coverage" NAME="train Coverage Results" MODIFIED="1606569632155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/transformer-master" />
     <SUITE FILE_PATH="coverage/lab4$transformer.coverage" NAME="transformer Coverage Results" MODIFIED="1606927412030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/transformer" />
+    <SUITE FILE_PATH="coverage/lab4$beam_search.coverage" NAME="beam_search Coverage Results" MODIFIED="1607188716227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
     <SUITE FILE_PATH="coverage/lab4$decoder.coverage" NAME="decoder Coverage Results" MODIFIED="1606925319053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/transformer" />
-    <SUITE FILE_PATH="coverage/lab4$data_preprocess.coverage" NAME="data_preprocess Coverage Results" MODIFIED="1606976723099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
+    <SUITE FILE_PATH="coverage/lab4$data_preprocess.coverage" NAME="data_preprocess Coverage Results" MODIFIED="1607186369355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
+    <SUITE FILE_PATH="coverage/lab4$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1607088330771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/Eric/Desktop" />
+    <SUITE FILE_PATH="coverage/lab4$bleu.coverage" NAME="bleu Coverage Results" MODIFIED="1607189299951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
   </component>
 </project>
