@@ -4,42 +4,64 @@ from torch.optim import Adam
 from torch.utils.data import DataLoader
 import tqdm
 from transformer.transformer import Transformer, Config
-from data.dataset import CorpusDataset
+from data.dataset import CorpusDataset, sentence_collate_fn
 from configparser import ConfigParser
 
 
-parser = ConfigParser()
-parser.read('./config.ini', encoding='utf-8')
-model_config = parser['model_config']
-pad_value = model_config.getint('pad_idx')
+class Trainer(object):
+    def __init__(self, model, model_config, train_set,
+                 lr=1e-4, model_state_dict=None,
+                 optimizer_state_dict=None, use_cuda=True, seed=10):
+        self.seed = seed
+        torch.manual_seed(seed)
+        self.device = torch.device('cuda:0' if use_cuda and torch.cuda.is_available() else 'cpu')
+        self.model = model(Config(model_config))
+        self.model: Transformer
+        if model_state_dict is not None:
+            self.model.load_state_dict(model_state_dict)
+        self.model.to(self.device)
+        self.train_loader = DataLoader(train_set, batch_size=32, shuffle=True, collate_fn=sentence_collate_fn)
+        self.optimizer = Adam(self.model.parameters(), lr=lr)
+        if optimizer_state_dict is not None:
+            self.optimizer.load_state_dict(optimizer_state_dict)
+        self.pad_idx = model_config.getint('pad_idx')
+        self.loss_fcn = nn.CrossEntropyLoss(ignore_index=self.pad_idx)
+
+    @torch.no_grad()
+    def calculate_loss(self, dataloader):
+        loss = 0
+        for src, tgt in tqdm.tqdm(dataloader, desc='calculate loss'):
+            src = src.to(self.device)
+            tgt = tgt.to(self.device)
+            output, label = self.model(src, tgt)
+            loss += self.loss_fcn(output.transpose(1, 2), label).item() * src.shape[0]
+        return loss / len(dataloader.dataset)
+
+    def train(self, epochs):
+        torch.manual_seed(self.seed)
+        for epoch in range(epochs):
+            for i, (src, tgt) in tqdm.tqdm(enumerate(self.train_loader), desc='Epoch_%s' % epoch):
+                src = src.to(self.device)
+                tgt = tgt.to(self.device)
+                output, label = self.model(src, tgt)
+                loss = self.loss_fcn(output.transpose(1, 2), label)
+                print('Loss: ', loss.item())
+                loss.backward()
+                self.optimizer.step()
+                self.optimizer.zero_grad()
 
 
-def sentence_collate_fn(one_batch):
-    src = [sen[0] for sen in one_batch]
-    tgt = [sen[1] for sen in one_batch]
-    src = nn.utils.rnn.pad_sequence(src, batch_first=True, padding_value=pad_value)
-    tgt = nn.utils.rnn.pad_sequence(tgt, batch_first=True, padding_value=pad_value)
-    return src, tgt
-
-
-torch.manual_seed(10)
-epochs = 2  # 2, 1, 2
-device = torch.device('cuda:0')
-transform = Transformer(Config(model_config))
-# transform.load_state_dict(torch.load('transformer.pkl'))
-transform.to(device)
-dataset = CorpusDataset('data/corpus/train_en', 'data/corpus/train_cn', 'data/vocab.pkl', model_config)
-dataloader = DataLoader(dataset, batch_size=32, shuffle=True, collate_fn=sentence_collate_fn)
-optimizer = Adam(transform.parameters(), lr=1e-4)
-# optimizer.load_state_dict(torch.load('optimizer.pkl'))
-loss_fcn = nn.CrossEntropyLoss(ignore_index=pad_value)
-for epoch in range(epochs):
-    for src, tgt in tqdm.tqdm(dataloader, desc='Epoch_%s' % epoch):
-        src = src.to(device)
-        tgt = tgt.to(device)
-        output, label = transform(src, tgt)
-        loss = loss_fcn(output.transpose(1, 2), label)
-        print('Loss: ', loss.item())
-        loss.backward()
-        optimizer.step()
-        optimizer.zero_grad()
+if __name__ == '__main__':
+    parser = ConfigParser()
+    parser.read('./config.ini', encoding='utf-8')
+    model_config = parser['model_config']
+    epochs = 2  # 2, 1, 2
+    train_set = CorpusDataset('data/corpus/train_en', 'data/corpus/train_cn', 'data/vocab.pkl', model_config)
+    trainer = Trainer(
+        model=Transformer,
+        model_config=model_config,
+        train_set=train_set,
+        lr=1e-4,
+        seed=10
+    )
+    trainer.train(2)
