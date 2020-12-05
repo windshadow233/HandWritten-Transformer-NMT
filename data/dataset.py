@@ -34,9 +34,10 @@ class CorpusDataset(Dataset):
         char2idx = self.src_char2idx if lang == 'en' else self.tgt_char2idx
         if lang == 'en':
             sentence = [normalize_string(s.strip()) for s in nltk.word_tokenize(sentence)]
+            sentence = sentence[:self.max_len]
         else:
+            sentence = sentence[:self.max_len - 2]
             sentence = ['<sos>'] + list(sentence) + ['<eos>']
-        sentence = sentence[:self.max_len]
         return torch.tensor([char2idx.get(word, char2idx['<unk>']) for word in sentence], dtype=torch.long)
 
     def token2sentence(self, token, lang='en'):
