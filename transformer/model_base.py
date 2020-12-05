@@ -10,7 +10,7 @@ def gelu(x):
     return 0.5 * x * (1.0 + torch.erf(x / math.sqrt(2.0)))
 
 
-activation_fcns = {'relu': F.relu, 'gelu': gelu}
+activation_fcns = {'relu': F.relu, 'gelu': gelu, 'leaky_relu': lambda x: F.leaky_relu(x, negative_slope=0.2)}
 
 
 # 模型的一些参数设置
