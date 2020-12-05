@@ -1,8 +1,20 @@
 import torch
+from torch import nn
 from torch.utils.data import Dataset
 import pickle
 import nltk
 from data_utils import *
+
+
+pad_idx = 0
+
+
+def sentence_collate_fn(one_batch):
+    src = [sen[0] for sen in one_batch]
+    tgt = [sen[1] for sen in one_batch]
+    src = nn.utils.rnn.pad_sequence(src, batch_first=True, padding_value=pad_idx)
+    tgt = nn.utils.rnn.pad_sequence(tgt, batch_first=True, padding_value=pad_idx)
+    return src, tgt
 
 
 class CorpusDataset(Dataset):
