@@ -1,11 +1,10 @@
-import torch
 from torch import nn
 from torch.optim import Adam
 from torch.utils.data import DataLoader
 import tqdm
 from transformer.transformer import Transformer, Config
 from data.dataset import CorpusDataset, sentence_collate_fn
-from configparser import ConfigParser
+from config import *
 
 
 class Trainer(object):
@@ -52,9 +51,6 @@ class Trainer(object):
 
 
 if __name__ == '__main__':
-    parser = ConfigParser()
-    parser.read('./config.ini', encoding='utf-8')
-    model_config = parser['model_config']
     epochs = 2  # 2, 1, 2
     train_set = CorpusDataset('data/corpus/train_en', 'data/corpus/train_cn', 'data/vocab.pkl', model_config)
     trainer = Trainer(
