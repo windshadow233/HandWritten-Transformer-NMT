@@ -29,7 +29,7 @@ class Trainer(object):
     @torch.no_grad()
     def calculate_loss(self, dataloader):
         loss = 0
-        for src, tgt in tqdm.tqdm(dataloader, desc='calculate loss'):
+        for src, tgt in tqdm.tqdm(dataloader, desc='calculate loss', total=len(dataloader)):
             src = src.to(self.device)
             tgt = tgt.to(self.device)
             output, label = self.model(src, tgt)
