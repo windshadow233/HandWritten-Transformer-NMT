@@ -3,7 +3,7 @@ from tqdm import tqdm
 import nltk
 import pickle
 from data_utils import *
-from configparser import ConfigParser
+from config import *
 
 
 def process(file, lang='zh'):
@@ -39,17 +39,9 @@ def process(file, lang='zh'):
 
 
 if __name__ == '__main__':
-    parser = ConfigParser()
-    parser.read('../config.ini', encoding='utf-8')
-    model_config = parser['model_config']
 
     vocab_file = 'vocab.pkl'
-    n_src_vocab = model_config.getint('vocab_size')
-    n_tgt_vocab = model_config.getint('vocab_size')
-    pad_idx = model_config.getint('pad_idx')  # padding
-    sos_idx = model_config.getint('sos_idx')  # start of sentence
-    eos_idx = model_config.getint('eos_idx')  # end of sentence
-    unk_idx = model_config.getint('unk_idx')  # unknown word
+    n_src_vocab = n_tgt_vocab = vocab_size
     train_translation_en_filename = 'corpus/train_en'
     train_translation_zh_filename = 'corpus/train_cn'
     valid_translation_en_filename = 'corpus/valid_en'
