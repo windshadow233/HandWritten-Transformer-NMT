@@ -41,10 +41,6 @@ class Decoder(nn.Module):
         self.tgt_word_prj = nn.Linear(self.embedding_dim, self.vocab_size, bias=False)
 
     def pre_process(self, padded_target: torch.Tensor):
-        # batch_size, seq_len = padded_target.shape
-        # sos = padded_target.new_ones(size=(batch_size, 1)) * self.sos_idx
-        # eos = padded_target.new_ones(size=(batch_size, 1)) * self.eos_idx
-        # return torch.cat([sos, padded_target], dim=1), torch.cat([padded_target, eos], dim=1)
         input_data = padded_target.clone()
         input_data[input_data == self.eos_idx] = 0
         input_data = input_data[:, :-1]
@@ -52,6 +48,13 @@ class Decoder(nn.Module):
         return input_data, target
 
     def forward(self, padded_target, padded_src, encoder_output, softmax_at_end=False):
+        """
+        :param padded_target: 经padding的目标序列,(B, L_target)
+        :param padded_src: 经padding的源序列,(B, L_src)
+        :param encoder_output: 源序列经encoder层的输出
+        :param softmax_at_end: 如其名所述
+        :return: logits or probability for each word,(B, vocab_size)
+        """
         input_data, target = self.pre_process(padded_target)
         pad_mask = get_pad_mask(input_data, self.pad_idx)
         self_attn_mask_subseq = get_subsequent_mask(input_data)
@@ -66,4 +69,3 @@ class Decoder(nn.Module):
         if softmax_at_end:
             decode_output = decode_output.softmax(-1)
         return decode_output, target
-
