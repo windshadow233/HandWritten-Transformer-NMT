@@ -1,12 +1,9 @@
-import torch
 from torch import nn
 from torch.utils.data import Dataset
 import pickle
 import nltk
 from data_utils import *
-
-
-pad_idx = 0
+from config import *
 
 
 def sentence_collate_fn(one_batch):
@@ -57,7 +54,7 @@ class CorpusDataset(Dataset):
         if isinstance(token, torch.Tensor):
             token = token.tolist()
         idx2char = self.src_idx2char if lang == 'en' else self.tgt_idx2char
-        sentence = [idx2char.get(idx) for idx in token if idx != 0]
+        sentence = [idx2char.get(idx) for idx in token if idx != pad_idx]
         if lang == 'en':
             return ' '.join(sentence)
         return ''.join(sentence)
