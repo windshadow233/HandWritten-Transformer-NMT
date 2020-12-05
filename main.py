@@ -23,14 +23,15 @@ def sentence_collate_fn(one_batch):
 
 
 torch.manual_seed(10)
-epochs = 2
+epochs = 2  # 2, 1, 2
 device = torch.device('cuda:0')
 transform = Transformer(Config(model_config))
-# transform.load_state_dict(torch.load('transformer.pkl'))
+transform.load_state_dict(torch.load('transformer.pkl'))
 transform.to(device)
 dataset = CorpusDataset('data/corpus/train_en', 'data/corpus/train_cn', 'data/vocab.pkl', model_config)
 dataloader = DataLoader(dataset, batch_size=32, shuffle=True, collate_fn=sentence_collate_fn)
 optimizer = Adam(transform.parameters(), lr=1e-4)
+optimizer.load_state_dict(torch.load('optimizer.pkl'))
 loss_fcn = nn.CrossEntropyLoss(ignore_index=pad_value)
 for epoch in range(epochs):
     for src, tgt in tqdm.tqdm(dataloader, desc='Epoch_%s' % epoch):
