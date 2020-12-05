@@ -17,7 +17,7 @@ transform.eval()
 
 def translate(sen):
     token = dataset.sentence2token(sen, 'en').to(device)
-    target = transform.beam_search(token, max_len=min(2 * len(token), model_config.getint('max_seq_len')))
+    target = transform.beam_search(token, max_len=min(2 * len(token) + 2, model_config.getint('max_seq_len')))
     for t in target:
         result = dataset.token2sentence(t[0].squeeze(0), 'cn')
         print(result)
