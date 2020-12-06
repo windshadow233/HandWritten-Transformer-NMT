@@ -23,7 +23,7 @@ class Trainer(object):
         self.optimizer = Adam(self.model.parameters(), lr=lr)
         if optimizer_state_dict is not None:
             self.optimizer.load_state_dict(optimizer_state_dict)
-        self.pad_idx = model_config.getint('pad_idx')
+        self.pad_idx = pad_idx
         self.loss_fcn = nn.CrossEntropyLoss(ignore_index=self.pad_idx)
 
     @torch.no_grad()
@@ -51,7 +51,6 @@ class Trainer(object):
 
 
 if __name__ == '__main__':
-    epochs = 2  # 2, 1, 2
     train_set = CorpusDataset('data/corpus/train_en', 'data/corpus/train_cn', 'data/vocab.pkl', model_config)
     trainer = Trainer(
         model=Transformer,
