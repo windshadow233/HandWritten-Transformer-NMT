@@ -53,14 +53,14 @@ class BeamHypotheses(object):
         return ret
 
 
-def beam_search(model, src_sens: torch.Tensor, max_length, num_beams=3):
+def beam_search(model, src_sens: torch.Tensor, num_beams=3):
     """
     :param model: Transformer
     :param src_sens: (B, L)
-    :param max_length: 最大句长
     :param num_beams: 单步搜索空间
     """
-    batch_size = src_sens.shape[0]
+    batch_size, length = src_sens.shape
+    max_length = min(max_seq_len, 2 * length + 2)
     encoder_output = model.encoder(src_sens)[0]
     encoder_output = encoder_output.repeat_interleave(num_beams, 0)
     src_sens = src_sens.repeat_interleave(num_beams, 0)
