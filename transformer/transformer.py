@@ -12,5 +12,5 @@ class Transformer(nn.Module):
 
     def forward(self, padded_src, padded_target):
         encoder_output, _ = self.encoder(padded_src)
-        pred_logits, target = self.decoder(padded_target, padded_src, encoder_output)
-        return pred_logits, target
+        pred_logits, gold = self.decoder(padded_target, padded_src, encoder_output)
+        return pred_logits, gold
