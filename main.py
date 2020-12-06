@@ -22,9 +22,10 @@ class Trainer(object):
             self.model.load_state_dict(model_state_dict)
         self.model.to(self.device)
         self.train_loader = DataLoader(train_set, batch_size=32, shuffle=True, collate_fn=sentence_collate_fn)
-        self.optimizer = WarmUpLr(Adam(self.model.parameters(), lr=lr, betas=(0.9, 0.98), eps=1e-09), warmup_step=1000)
+        self.optimizer = WarmUpLr(Adam(self.model.parameters(), lr=lr, betas=(0.9, 0.98), eps=1e-09),
+                                  init_lr=2.0, warmup_step=1000)
         if optimizer_state_dict is not None:
-            self.optimizer.optimizer.load_state_dict(optimizer_state_dict)
+            self.optimizer.load_state_dict(optimizer_state_dict)
         self.loss_fcn = nn.CrossEntropyLoss(ignore_index=pad_idx)
 
     def train(self, epochs):
@@ -54,4 +55,4 @@ if __name__ == '__main__':
     )
     trainer.train(1)
     torch.save(trainer.model.state_dict(), 'model/1epoch/transformer.pkl')
-    torch.save(trainer.optimizer.optimizer.state_dict(), 'model/1epoch/optimizer.pkl')
+    torch.save(trainer.optimizer.state_dict(), 'model/1epoch/optimizer.pkl')
