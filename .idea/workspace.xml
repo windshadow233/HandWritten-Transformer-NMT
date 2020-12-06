@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2a75ad3-cbcf-4863-8b2e-c69877cd32d7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/vocab.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/data/vocab.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evaluation/beam_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/beam_search.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transformer/transformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/transformer/transformer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transformer/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/transformer/__init__.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,15 +35,20 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../lab3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="pyconsole" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myUseExistingConsole" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\深度学习实验\lab4\evaluation" />
-      <recent name="F:\深度学习实验\lab4\data" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\深度学习实验\lab4" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\深度学习实验\lab4\model\1.0" />
+      <recent name="F:\深度学习实验\lab4\evaluation" />
+      <recent name="F:\深度学习实验\lab4\data" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
@@ -53,6 +56,9 @@
       <module name="lab4" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/evaluation" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -72,9 +78,6 @@
       <module name="lab4" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/evaluation" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -141,7 +144,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="F:\深度学习实验\lab4\evaluation\test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -153,17 +156,17 @@
     <list>
       <item itemvalue="Python.main" />
       <item itemvalue="Python.data_preprocess" />
-      <item itemvalue="Python.test" />
       <item itemvalue="Python.beam_search" />
       <item itemvalue="Python.bleu" />
+      <item itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.bleu" />
         <item itemvalue="Python.beam_search" />
         <item itemvalue="Python.data_preprocess" />
-        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -185,7 +188,11 @@
       <workItem from="1607051761444" duration="32933000" />
       <workItem from="1607145809183" duration="3251000" />
       <workItem from="1607149670224" duration="604000" />
-      <workItem from="1607150767117" duration="26405000" />
+      <workItem from="1607150767117" duration="26499000" />
+      <workItem from="1607190491873" duration="143000" />
+      <workItem from="1607223479350" duration="448000" />
+      <workItem from="1607226412933" duration="120000" />
+      <workItem from="1607229246818" duration="4135000" />
     </task>
     <servers />
   </component>
@@ -193,10 +200,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607189350898">
+    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607238683003">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1607189350898" />
+    <state x="223" y="87" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.864@0.0.1536.864" timestamp="1607238683003" />
     <state x="511" y="235" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606909805122">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -209,26 +216,26 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="855" y="269" key="#xdebugger.evaluate/0.0.1536.864@0.0.1536.864" timestamp="1607184758616" />
-    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1606977694165">
+    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1607223929265">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1606977694165" />
-    <state width="1493" height="375" key="GridCell.Tab.0.bottom" timestamp="1607189346147">
+    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1607223929265" />
+    <state width="1493" height="374" key="GridCell.Tab.0.bottom" timestamp="1607238701197">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="375" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607189346147" />
-    <state width="1493" height="375" key="GridCell.Tab.0.center" timestamp="1607189346146">
+    <state width="1493" height="374" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607238701197" />
+    <state width="1493" height="374" key="GridCell.Tab.0.center" timestamp="1607238701196">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="375" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1607189346146" />
-    <state width="1493" height="375" key="GridCell.Tab.0.left" timestamp="1607189346146">
+    <state width="1493" height="374" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1607238701196" />
+    <state width="1493" height="374" key="GridCell.Tab.0.left" timestamp="1607238701196">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="375" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1607189346146" />
-    <state width="1493" height="375" key="GridCell.Tab.0.right" timestamp="1607189346146">
+    <state width="1493" height="374" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1607238701196" />
+    <state width="1493" height="374" key="GridCell.Tab.0.right" timestamp="1607238701196">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="375" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1607189346146" />
+    <state width="1493" height="374" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1607238701196" />
     <state width="1493" height="401" key="GridCell.Tab.1.bottom" timestamp="1607184859889">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -245,6 +252,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="401" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1607184859889" />
+    <state x="270" y="74" key="SettingsEditor" timestamp="1607238727987">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="270" y="74" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1607238727987" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -263,7 +274,7 @@
     <SUITE FILE_PATH="coverage/lab4$main.coverage" NAME="main Coverage Results" MODIFIED="1606976511336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/lab4$pre_process.coverage" NAME="pre_process Coverage Results" MODIFIED="1606566012148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
     <SUITE FILE_PATH="coverage/lab4$dataset.coverage" NAME="dataset Coverage Results" MODIFIED="1606895420261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
-    <SUITE FILE_PATH="coverage/lab4$test.coverage" NAME="test Coverage Results" MODIFIED="1607106446419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/lab4$test.coverage" NAME="test Coverage Results" MODIFIED="1607238669111" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/lab4$pre_proccess.coverage" NAME="pre_proccess Coverage Results" MODIFIED="1606562607569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
     <SUITE FILE_PATH="coverage/lab4$train.coverage" NAME="train Coverage Results" MODIFIED="1606569632155" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/transformer-master" />
     <SUITE FILE_PATH="coverage/lab4$transformer.coverage" NAME="transformer Coverage Results" MODIFIED="1606927412030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/transformer" />
