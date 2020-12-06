@@ -3,7 +3,7 @@ from torch.optim import Adam
 from torch.utils.data import DataLoader
 import tqdm
 from transformer.transformer import Transformer, Config
-from data.dataset import CorpusDataset, sentence_collate_fn
+from data.dataset import TokenSentenceConverter, CorpusDataset, sentence_collate_fn
 from config import *
 
 
@@ -23,8 +23,7 @@ class Trainer(object):
         self.optimizer = Adam(self.model.parameters(), lr=lr)
         if optimizer_state_dict is not None:
             self.optimizer.load_state_dict(optimizer_state_dict)
-        self.pad_idx = pad_idx
-        self.loss_fcn = nn.CrossEntropyLoss(ignore_index=self.pad_idx)
+        self.loss_fcn = nn.CrossEntropyLoss(ignore_index=pad_idx)
 
     @torch.no_grad()
     def calculate_loss(self, dataloader):
@@ -51,7 +50,8 @@ class Trainer(object):
 
 
 if __name__ == '__main__':
-    train_set = CorpusDataset('data/corpus/train_en', 'data/corpus/train_cn', 'data/vocab.pkl', model_config)
+    converter = TokenSentenceConverter('data/vocab.pkl')
+    train_set = CorpusDataset('data/corpus/train_en', 'data/corpus/train_cn', converter)
     trainer = Trainer(
         model=Transformer,
         model_config=model_config,
