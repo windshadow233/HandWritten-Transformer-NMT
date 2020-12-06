@@ -2,7 +2,7 @@ from torch import nn
 from torch.optim import Adam
 from torch.utils.data import DataLoader
 import tqdm
-from transformer.transformer import Transformer, Config
+from transformer import Transformer, Config
 from data.dataset import TokenSentenceConverter, CorpusDataset, sentence_collate_fn
 from config import *
 
@@ -57,6 +57,10 @@ if __name__ == '__main__':
         model_config=model_config,
         train_set=train_set,
         lr=1e-4,
+        model_state_dict=torch.load('model/2epoch/transformer.pkl'),
+        optimizer_state_dict=torch.load('model/2epoch/optimizer.pkl'),
         seed=10
     )
-    trainer.train(2)
+    trainer.train(1)
+    torch.save(trainer.model.state_dict(), 'model/3epoch/transformer.pkl')
+    torch.save(trainer.optimizer.state_dict(), 'model/3epoch/optimizer.pkl')
