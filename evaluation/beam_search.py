@@ -1,10 +1,4 @@
-from transformer.transformer import Transformer, Config
 from config import *
-
-
-model = Transformer(Config(model_config))
-model.load_state_dict(torch.load('../model/transformer.pkl'))
-model.to(device).eval()
 
 
 class BeamHypotheses(object):
@@ -59,8 +53,9 @@ class BeamHypotheses(object):
         return ret
 
 
-def beam_search(src_sens: torch.Tensor, max_length, num_beams=3):
+def beam_search(model, src_sens: torch.Tensor, max_length, num_beams=3):
     """
+    :param model: Transformer
     :param src_sens: (B, L)
     :param max_length: 最大句长
     :param num_beams: 单步搜索空间
