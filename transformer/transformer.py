@@ -9,10 +9,6 @@ class Transformer(nn.Module):
         super(Transformer, self).__init__()
         self.encoder = Encoder(config)
         self.decoder = Decoder(config)
-        self.pad_idx = config.pad_idx
-        self.sos_idx = config.sos_idx
-        self.eos_idx = config.eos_idx
-        self.max_seq_len = config.max_seq_len
 
     def forward(self, padded_src, padded_target):
         encoder_output, _ = self.encoder(padded_src)
