@@ -3,7 +3,7 @@ import torch.nn.functional as F
 import math
 import numpy as np
 import re
-from utils import *
+from .utils import *
 
 
 def gelu(x):
