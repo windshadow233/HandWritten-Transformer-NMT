@@ -4,7 +4,6 @@ from torch.utils.data import DataLoader
 import tqdm
 from transformer import Transformer, Config
 from data.dataset import TokenSentenceConverter, CorpusDataset, sentence_collate_fn
-from warm_up import WarmUpLr
 from config import *
 
 
@@ -22,9 +21,7 @@ class Trainer(object):
             self.model.load_state_dict(model_state_dict)
         self.model.to(self.device)
         self.train_loader = DataLoader(train_set, batch_size=32, shuffle=True, collate_fn=sentence_collate_fn)
-        self.optimizer = WarmUpLr(Adam(self.model.parameters(), lr=lr, betas=(0.9, 0.98), eps=1e-09),
-                                  init_lr=2.0, warmup_step=4000)
-        # self.optimizer = Adam(self.model.parameters(), lr, betas=(0.9, 0.98), eps=1e-9)
+        self.optimizer = Adam(self.model.parameters(), lr, betas=(0.9, 0.98), eps=1e-9)
         if optimizer_state_dict is not None:
             self.optimizer.load_state_dict(optimizer_state_dict)
         self.loss_fcn = nn.CrossEntropyLoss(ignore_index=pad_idx)
@@ -49,7 +46,7 @@ if __name__ == '__main__':
         model=Transformer,
         model_config=model_config,
         train_set=train_set,
-        lr=1e-4,
+        lr=2e-4,
         # model_state_dict=torch.load('model/3epoch/transformer.pkl'),
         # optimizer_state_dict=torch.load('model/3epoch/optimizer.pkl'),
         seed=10
