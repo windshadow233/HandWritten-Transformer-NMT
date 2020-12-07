@@ -1,4 +1,4 @@
-from model_base import *
+from .model_base import *
 
 
 # Encoder的其中一层(包含注意力层与feedforward)
