@@ -22,9 +22,11 @@ class TokenSentenceConverter(object):
         self.src_idx2char = vocab_dict.get('src_idx2char')
         self.tgt_char2idx = vocab_dict.get('tgt_char2idx')
         self.tgt_idx2char = vocab_dict.get('tgt_idx2char')
+        self.replace = str.maketrans('。？！，；：‘’“”（）【】', '.?!,;:\'\'""()[]')
 
     def sentence2token(self, sentence, lang='en'):
         assert lang in {'en', 'cn'}
+        sentence = sentence.translate(self.replace)
         char2idx = self.src_char2idx if lang == 'en' else self.tgt_char2idx
         if lang == 'en':
             sentence = [normalize_string(s.strip()) for s in nltk.word_tokenize(sentence)]
