@@ -1,3 +1,5 @@
+import os
+os.chdir('..')
 from collections import Counter
 from tqdm import tqdm
 import nltk
@@ -12,9 +14,11 @@ def process(file, lang='zh'):
         data = f.readlines()
 
     word_freq = Counter()
-
+    # 替换全半角
+    replace = str.maketrans('。？！，；：‘’“”（）【】', '.?!,;:\'\'""()[]')
     for line in tqdm(data):
         sentence = line.strip()
+        sentence = sentence.translate(replace)
         if lang == 'en':
             sentence_en = sentence.lower()
             tokens = [normalize_string(s) for s in nltk.word_tokenize(sentence_en)]
@@ -40,12 +44,12 @@ def process(file, lang='zh'):
 
 if __name__ == '__main__':
 
-    vocab_file = 'vocab.pkl'
+    vocab_file = 'data/vocab.pkl'
     n_src_vocab = n_tgt_vocab = vocab_size
-    train_translation_en_filename = 'corpus/train_en'
-    train_translation_zh_filename = 'corpus/train_cn'
-    valid_translation_en_filename = 'corpus/valid_en'
-    valid_translation_zh_filename = 'corpus/valid_cn'
+    train_translation_en_filename = 'data/corpus/train_en'
+    train_translation_zh_filename = 'data/corpus/train_cn'
+    valid_translation_en_filename = 'data/corpus/valid_en'
+    valid_translation_zh_filename = 'data/corpus/valid_cn'
 
     tgt_char2idx, tgt_idx2char = process(train_translation_zh_filename, lang='zh')
     src_char2idx, src_idx2char = process(train_translation_en_filename, lang='en')
