@@ -11,5 +11,4 @@ def unicode_to_ascii(s):
 
 def normalize_string(s):
     s = unicode_to_ascii(s.lower().strip())
-    s = re.sub(r"([.!?])", r" \1", s)
     return s
