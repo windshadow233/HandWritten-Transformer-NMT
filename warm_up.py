@@ -2,11 +2,11 @@ from config import embedding_dim
 
 
 class WarmUpLr(object):
-    def __init__(self, optimizer, init_lr, warmup_step):
+    def __init__(self, optimizer, init_lr, warmup_step, step_num=0):
         self.optimizer = optimizer
         self.init_lr = init_lr
         self.warmup_step = warmup_step
-        self.step_num = 0
+        self.step_num = step_num
 
     def load_state_dict(self, d):
         self.optimizer.load_state_dict(d)
