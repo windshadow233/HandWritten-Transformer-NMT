@@ -1,4 +1,4 @@
-from model_base import *
+from .model_base import *
 
 
 # Decoder的其中一层
