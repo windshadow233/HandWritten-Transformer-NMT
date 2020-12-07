@@ -2,7 +2,7 @@ from torch import nn
 from torch.utils.data import Dataset
 import pickle
 import nltk
-from data_utils import *
+from .data_utils import *
 from config import *
 
 
