@@ -58,9 +58,11 @@ class CorpusDataset(Dataset):
     def __len__(self):
         return len(self.src_sentences)
 
-    def __getitem__(self, item):
+    def __getitem__(self, item, to_token=True):
         src_sen = self.src_sentences[item].strip()
         tgt_sen = self.tgt_sentences[item].strip()
-        src_token = self.converter.sentence2token(src_sen, 'en')
-        tgt_token = self.converter.sentence2token(tgt_sen, 'cn')
-        return src_token, tgt_token
+        if to_token:
+            src_token = self.converter.sentence2token(src_sen, 'en')
+            tgt_token = self.converter.sentence2token(tgt_sen, 'cn')
+            return src_token, tgt_token
+        return src_sen, tgt_sen
