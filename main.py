@@ -47,10 +47,10 @@ if __name__ == '__main__':
         model_config=model_config,
         train_set=train_set,
         lr=2e-4,
-        # model_state_dict=torch.load('model/3epoch/transformer.pkl'),
-        # optimizer_state_dict=torch.load('model/3epoch/optimizer.pkl'),
+        # model_state_dict=torch.load('model_state_dict/3epoch/transformer.pkl'),
+        # optimizer_state_dict=torch.load('model_state_dict/3epoch/optimizer.pkl'),
         seed=10
     )
-    trainer.train(5)
-    torch.save(trainer.model.state_dict(), 'model/1epoch/transformer.pkl')
-    torch.save(trainer.optimizer.state_dict(), 'model/1epoch/optimizer.pkl')
+    trainer.train(1)
+    torch.save(trainer.model.state_dict(), 'model_state_dict/1epoch/transformer.pkl')
+    torch.save(trainer.optimizer.state_dict(), 'model_state_dict/1epoch/optimizer.pkl')
