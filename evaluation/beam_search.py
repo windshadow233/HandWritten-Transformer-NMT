@@ -148,7 +148,7 @@ def beam_search(model, src_sens: torch.Tensor, num_beams=3):
     # 每个样本返回几个句子
     output_num_return_sequences_per_batch = 1
     # 记录每个返回句子的长度，用于后面pad
-    sent_lengths = input_ids.new_zeros((batch_size,))
+    sent_lengths = input_ids.new_zeros((batch_size * output_num_return_sequences_per_batch,))
     best = []
     # 对每个样本取出最好的output_num_return_sequences_per_batch个句子
     for i, hypotheses in enumerate(generated_sens):
@@ -162,7 +162,8 @@ def beam_search(model, src_sens: torch.Tensor, num_beams=3):
     if sent_lengths.min().item() != sent_lengths.max().item():
         sent_max_len = min(sent_lengths.max().item() + 1, max_length)
         # 先把输出矩阵填满PAD token
-        decoded = input_ids.new_full(size=(batch_size, sent_max_len + 1), fill_value=pad_idx)
+        decoded = input_ids.new_full(size=(batch_size * output_num_return_sequences_per_batch, sent_max_len + 1),
+                                     fill_value=pad_idx)
         # 填入真正的内容
         for i, hypo in enumerate(best):
             decoded[i, : sent_lengths[i]] = hypo
