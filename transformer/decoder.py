@@ -31,14 +31,14 @@ class Decoder(nn.Module):
         self.sos_idx = config.sos_idx
         self.eos_idx = config.eos_idx
         self.unk_idx = config.unk_idx
-        self.vocab_size = config.vocab_size
+        self.tgt_vocab_size = config.tgt_vocab_size
         self.num_hidden_layers = config.num_hidden_layers
         self.embedding_dim = config.embedding_dim
         self.max_seq_len = config.max_seq_len
 
-        self.word_embedding = Embedding(config)
+        self.word_embedding = Embedding(config, config.tgt_vocab_size)
         self.layers = nn.ModuleList([DecodeLayer(config) for _ in range(self.num_hidden_layers)])
-        self.tgt_word_prj = nn.Linear(self.embedding_dim, self.vocab_size, bias=False)
+        self.tgt_word_prj = nn.Linear(self.embedding_dim, self.tgt_vocab_size, bias=False)
 
     def pre_process(self, padded_target: torch.Tensor):
         input_data = padded_target.clone()
@@ -53,7 +53,7 @@ class Decoder(nn.Module):
         :param padded_src: 经padding的源序列,(B, L_src)
         :param encoder_output: 源序列经encoder层的输出
         :param softmax_at_end: 如其名所述
-        :return: decode_output: logits or probability for each word,(B, vocab_size); target: gold sentences
+        :return: decode_output: logits or probability for each word,(B, tgt_vocab_size); target: gold sentences
         """
         input_data, target = self.pre_process(padded_target)
         pad_mask = get_pad_mask(input_data, self.pad_idx)
