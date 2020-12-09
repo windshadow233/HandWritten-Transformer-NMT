@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2a75ad3-cbcf-4863-8b2e-c69877cd32d7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/warm_up.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/beam_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/beam_search.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation/bleu.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation/translate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/transformer/transformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/transformer/transformer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +32,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="pyconsole" />
+    <property name="last_opened_file_path" value="F:/pycharmProjects/肿瘤靶区勾画" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -66,6 +60,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/config.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="data_preprocess" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="lab4" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/data_preprocess.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -134,42 +150,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="translate" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="lab4" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/evaluation" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="F:\深度学习实验\lab4\evaluation\translate.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.main" />
       <item itemvalue="Python.dataset" />
       <item itemvalue="Python.config" />
       <item itemvalue="Python.test" />
-      <item itemvalue="Python.translate" />
+      <item itemvalue="Python.data_preprocess" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.data_preprocess" />
         <item itemvalue="Python.config" />
         <item itemvalue="Python.dataset" />
-        <item itemvalue="Python.translate" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +190,12 @@
       <workItem from="1607223479350" duration="448000" />
       <workItem from="1607226412933" duration="120000" />
       <workItem from="1607229246818" duration="10963000" />
-      <workItem from="1607261394447" duration="12314000" />
+      <workItem from="1607261394447" duration="16852000" />
+      <workItem from="1607315489955" duration="17336000" />
+      <workItem from="1607362304970" duration="798000" />
+      <workItem from="1607407019699" duration="17506000" />
+      <workItem from="1607492481833" duration="3739000" />
+      <workItem from="1607497286248" duration="18460000" />
     </task>
     <servers />
   </component>
@@ -220,26 +219,26 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state x="855" y="269" key="#xdebugger.evaluate/0.0.1536.864@0.0.1536.864" timestamp="1607184758616" />
-    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1607223929265">
+    <state x="549" y="187" key="FileChooserDialogImpl" timestamp="1607507952852">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1607223929265" />
-    <state width="1493" height="374" key="GridCell.Tab.0.bottom" timestamp="1607261373179">
+    <state x="549" y="187" key="FileChooserDialogImpl/0.0.1536.864@0.0.1536.864" timestamp="1607507952852" />
+    <state width="1493" height="295" key="GridCell.Tab.0.bottom" timestamp="1607361116783">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="374" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607261373179" />
-    <state width="1493" height="374" key="GridCell.Tab.0.center" timestamp="1607261373179">
+    <state width="1493" height="295" key="GridCell.Tab.0.bottom/0.0.1536.864@0.0.1536.864" timestamp="1607361116783" />
+    <state width="1493" height="295" key="GridCell.Tab.0.center" timestamp="1607361116783">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="374" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1607261373179" />
-    <state width="1493" height="374" key="GridCell.Tab.0.left" timestamp="1607261373179">
+    <state width="1493" height="295" key="GridCell.Tab.0.center/0.0.1536.864@0.0.1536.864" timestamp="1607361116783" />
+    <state width="1493" height="295" key="GridCell.Tab.0.left" timestamp="1607361116783">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="374" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1607261373179" />
-    <state width="1493" height="374" key="GridCell.Tab.0.right" timestamp="1607261373179">
+    <state width="1493" height="295" key="GridCell.Tab.0.left/0.0.1536.864@0.0.1536.864" timestamp="1607361116783" />
+    <state width="1493" height="295" key="GridCell.Tab.0.right" timestamp="1607361116783">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state width="1493" height="374" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1607261373179" />
+    <state width="1493" height="295" key="GridCell.Tab.0.right/0.0.1536.864@0.0.1536.864" timestamp="1607361116783" />
     <state width="1493" height="401" key="GridCell.Tab.1.bottom" timestamp="1607184859889">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -256,10 +255,10 @@
       <screen x="0" y="0" width="1536" height="864" />
     </state>
     <state width="1493" height="401" key="GridCell.Tab.1.right/0.0.1536.864@0.0.1536.864" timestamp="1607184859889" />
-    <state x="270" y="74" key="SettingsEditor" timestamp="1607259703465">
+    <state x="270" y="74" key="SettingsEditor" timestamp="1607497682111">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
-    <state x="270" y="74" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1607259703465" />
+    <state x="270" y="74" key="SettingsEditor/0.0.1536.864@0.0.1536.864" timestamp="1607497682111" />
     <state x="335" y="35" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1607260029508">
       <screen x="0" y="0" width="1536" height="864" />
     </state>
@@ -293,7 +292,7 @@
     <SUITE FILE_PATH="coverage/lab4$config.coverage" NAME="config Coverage Results" MODIFIED="1607259564097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/lab4$beam_search.coverage" NAME="beam_search Coverage Results" MODIFIED="1607188716227" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
     <SUITE FILE_PATH="coverage/lab4$decoder.coverage" NAME="decoder Coverage Results" MODIFIED="1606925319053" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/transformer" />
-    <SUITE FILE_PATH="coverage/lab4$data_preprocess.coverage" NAME="data_preprocess Coverage Results" MODIFIED="1607186369355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
+    <SUITE FILE_PATH="coverage/lab4$data_preprocess.coverage" NAME="data_preprocess Coverage Results" MODIFIED="1607349535115" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
     <SUITE FILE_PATH="coverage/lab4$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1607088330771" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="D:/Eric/Desktop" />
     <SUITE FILE_PATH="coverage/lab4$bleu.coverage" NAME="bleu Coverage Results" MODIFIED="1607189299951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/evaluation" />
   </component>
