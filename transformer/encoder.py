@@ -35,7 +35,7 @@ class Encoder(nn.Module):
     def __init__(self, config: Config):
         super(Encoder, self).__init__()
         self.pad_idx = config.pad_idx
-        self.word_embedding = Embedding(config)
+        self.word_embedding = Embedding(config, config.src_vocab_size)
         self.layers = nn.ModuleList([EncodeLayer(config) for _ in range(config.num_hidden_layers)])
 
     def forward(self, x, output_all_encoded_layers=False, get_attention_mat=False):
