@@ -4,7 +4,7 @@ from collections import Counter
 from tqdm import tqdm
 import nltk
 import pickle
-from data_utils import *
+from utils import *
 from config import *
 
 
@@ -15,10 +15,9 @@ def process(file, lang='zh'):
 
     word_freq = Counter()
     # 替换全半角
-    replace = str.maketrans('。？！，；：‘’“”（）【】', '.?!,;:\'\'""()[]')
     for line in tqdm(data):
         sentence = line.strip()
-        sentence = sentence.translate(replace)
+        sentence = full_width2half_width(sentence)
         if lang == 'en':
             sentence_en = sentence.lower()
             tokens = [normalize_string(s) for s in nltk.word_tokenize(sentence_en)]
