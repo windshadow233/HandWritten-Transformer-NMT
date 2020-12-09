@@ -53,7 +53,7 @@ class Decoder(nn.Module):
         :param padded_src: 经padding的源序列,(B, L_src)
         :param encoder_output: 源序列经encoder层的输出
         :param softmax_at_end: 如其名所述
-        :return: logits or probability for each word,(B, vocab_size)
+        :return: decode_output: logits or probability for each word,(B, vocab_size); target: gold sentences
         """
         input_data, target = self.pre_process(padded_target)
         pad_mask = get_pad_mask(input_data, self.pad_idx)
