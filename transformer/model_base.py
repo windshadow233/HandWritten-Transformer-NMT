@@ -55,9 +55,9 @@ class PositionalEncoding(nn.Module):
 
 # 词嵌入(包含位置嵌入)
 class Embedding(nn.Module):
-    def __init__(self, config: Config):
+    def __init__(self, config: Config, vocab_size):
         super(Embedding, self).__init__()
-        self.word_embeddings = nn.Embedding(config.vocab_size, config.embedding_dim, padding_idx=0)  # 指定0为padding符号
+        self.word_embeddings = nn.Embedding(vocab_size, config.embedding_dim, padding_idx=0)  # 指定0为padding符号
         self.pos_enc = PositionalEncoding(config)
 
     def forward(self, input_ids):
