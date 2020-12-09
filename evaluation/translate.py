@@ -9,7 +9,7 @@ def translate(model, converter, sentences):
     :param sentences: 一个英文句子列表
     :return: results: 中文句子列表
     """
-    sentences = [s + '.' if s[-1].isalpha() else s for s in sentences]
+    sentences = [s + '.' if not s.endswith(('.', '!', '?')) else s for s in sentences]
     token = torch.nn.utils.rnn.pad_sequence([converter.sentence2token(sen, 'en').to(device)
                                              for sen in sentences],
                                             batch_first=True)
