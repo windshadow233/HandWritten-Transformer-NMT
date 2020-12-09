@@ -15,16 +15,16 @@ model.cuda()
 model.eval()
 converter = TokenSentenceConverter('data/vocab.pkl')
 dataset = CorpusDataset('data/corpus/test_en', 'data/corpus/test_cn', converter)
-dataloader = DataLoader(dataset, batch_size=20, shuffle=True, collate_fn=sentence_collate_fn)
-translate = lambda x: list(translate_batch(model, converter, [x]).items())[0][1]
+dataloader = DataLoader(dataset, batch_size=20, shuffle=False, collate_fn=sentence_collate_fn)
+translate = lambda x: list(translate_batch(model, converter, [x]).values())[0]
 bleu_ = 0
 dataloader = iter(dataloader)
-# with torch.no_grad():
-#     for _ in tqdm.tqdm(range(50)):
-#         src, tgt = next(dataloader)
-#         src = [converter.token2sentence(sen, 'en') for sen in src]
-#         tgt = [converter.token2sentence(sen[1: -1], 'cn') for sen in tgt]
-#         result = translate(model, converter, src)
-#         for r, t in zip(result, tgt):
-#             bleu_ += bleu([list(t)], list(r))
-# print(bleu_ / 1000)
+with torch.no_grad():
+    for _ in tqdm.tqdm(range(50)):
+        src, tgt = next(dataloader)
+        src = [converter.token2sentence(sen, 'en') for sen in src]
+        tgt = [converter.token2sentence(sen, 'cn').replace('<sos>', '').replace('<eos>', '') for sen in tgt]
+        result = translate_batch(model, converter, src).values()
+        for r, t in zip(result, tgt):
+            bleu_ += bleu([list(t)], list(r))
+print(bleu_ / 1000)
