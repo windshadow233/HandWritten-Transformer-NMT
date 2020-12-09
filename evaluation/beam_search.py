@@ -108,8 +108,8 @@ def beam_search(model, src_sens: torch.Tensor, num_beams=3):
             for beam_token_rank, (beam_token_id, beam_token_score) in enumerate(
                 zip(next_tokens[batch_idx], next_scores[batch_idx])
             ):
-                beam_id = beam_token_id // vocab_size
-                token_id = beam_token_id % vocab_size
+                beam_id = beam_token_id // tgt_vocab_size
+                token_id = beam_token_id % tgt_vocab_size
 
                 effect_beam_id = batch_idx * num_beams + beam_id
                 if token_id.item() == eos_idx:
