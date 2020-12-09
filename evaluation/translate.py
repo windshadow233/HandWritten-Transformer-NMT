@@ -15,4 +15,5 @@ def translate(model, converter, sentences):
                                             batch_first=True)
     decode = beam_search(model, token, num_beams=5)
     results = [converter.token2sentence(sen, 'cn').replace('<sos>', '').replace('<eos>', '') for sen in decode]
+    results = dict(zip(sentences, results))
     return results
