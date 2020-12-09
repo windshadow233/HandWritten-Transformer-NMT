@@ -28,7 +28,9 @@ class Trainer(object):
 
     def train(self, epochs):
         for epoch in range(epochs):
-            for i, (src, tgt) in tqdm.tqdm(enumerate(self.train_loader), desc='Epoch_%s' % epoch, total=len(self.train_loader)):
+            for i, (src, tgt) in tqdm.tqdm(enumerate(self.train_loader),
+                                           desc='Epoch_%s' % epoch,
+                                           total=len(self.train_loader)):
                 src = src.to(self.device)
                 tgt = tgt.to(self.device)
                 output, gold = self.model(src, tgt)
