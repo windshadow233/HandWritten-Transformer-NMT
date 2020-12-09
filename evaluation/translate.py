@@ -2,7 +2,7 @@ from evaluation.beam_search import *
 
 
 @torch.no_grad()
-def translate(model, converter, sentences):
+def translate_batch(model, converter, sentences):
     """
     :param model: Transformer
     :param converter: TokenSentenceConverter
