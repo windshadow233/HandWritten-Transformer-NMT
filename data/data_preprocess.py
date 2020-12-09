@@ -45,7 +45,8 @@ def process(file, lang='zh'):
 if __name__ == '__main__':
 
     vocab_file = 'data/vocab.pkl'
-    n_src_vocab = n_tgt_vocab = vocab_size
+    n_src_vocab = src_vocab_size
+    n_tgt_vocab = tgt_vocab_size
     train_translation_en_filename = 'data/corpus/train_en'
     train_translation_zh_filename = 'data/corpus/train_cn'
     valid_translation_en_filename = 'data/corpus/valid_en'
