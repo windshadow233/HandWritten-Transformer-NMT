@@ -15,6 +15,7 @@ def translate_batch(model, converter, src, tgt=None):
     :return: predicts: 中文句子列表
     """
     src = [full_width2half_width(s) for s in src]
+    tgt = [full_width2half_width(t) for t in tgt]
     src = [s + '.' if not s.endswith(('.', '!', '?')) else s for s in src]
     token = torch.nn.utils.rnn.pad_sequence([converter.sentence2token(sen, 'en').to(device)
                                              for sen in src],
