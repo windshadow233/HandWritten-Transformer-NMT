@@ -34,7 +34,7 @@ class PositionalEncoding(nn.Module):
     @staticmethod
     def get_positional_enc(max_seq_len, embedding_dim):
         position_code = np.array([
-            [pos / np.power(10000, 2 * i / embedding_dim) for i in range(embedding_dim)]
+            [pos / np.power(10000, i / embedding_dim) for i in range(embedding_dim)]
             if pos != 0 else np.zeros(embedding_dim) for pos in range(max_seq_len)
         ])
         position_code[1:, 0::2] = np.sin(position_code[1:, 0::2])
