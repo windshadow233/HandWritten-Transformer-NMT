@@ -1,6 +1,8 @@
 import re
 from evaluation.beam_search import *
 from data.utils import full_width2half_width
+from nltk.translate.bleu_score import sentence_bleu, SmoothingFunction
+fcn = SmoothingFunction()
 
 
 @torch.no_grad()
@@ -20,10 +22,13 @@ def translate_batch(model, converter, src, tgt=None):
     decode = beam_search(model, token, num_beams=5)
     predicts = [converter.token2sentence(sen, 'cn').replace('<sos>', '').replace('<eos>', '') for sen in decode]
     if tgt is not None:
-        for s, p, t in zip(src, predicts, tgt):
-            print(f'Src  | {s}\nTgt  | {t}\nPred | {p}\n')
+        bleus = [sentence_bleu([list(t)], list(p), weights=(0.25,) * 4, smoothing_function=fcn.method1)
+                 for t, p in zip(tgt, predicts)]
+        for s, p, t, b in zip(src, predicts, tgt, bleus):
+            print(f'Src  | {s}\nTgt  | {t}\nPred | {p}\nBLEU | {b}\n')
+        predicts = zip(src, tgt, predicts, bleus)
     else:
         for s, p in zip(src, predicts):
             print(f'Src  | {s}\nPred | {p}\n')
-    predicts = dict(zip(src, predicts))
+        predicts = zip(src, predicts)
     return predicts
