@@ -14,12 +14,12 @@ model.eval()
 batch_size = 25
 converter = TokenSentenceConverter('data/vocab.pkl')
 dataset = CorpusDataset('data/corpus/test_en', 'data/corpus/test_cn', converter, to_token=False)
-dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=False,
+dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True,
                         collate_fn=lambda x: ([s[0] for s in x], [s[1] for s in x]))
 translate = lambda x: translate_batch(model, converter, [x])
 bleu_ = 0
 dataloader = iter(dataloader)
-batches = 2
+batches = 5
 with torch.no_grad(), tqdm.tqdm(range(batches)) as t:
     for _ in t:
         src, tgt = next(dataloader)
