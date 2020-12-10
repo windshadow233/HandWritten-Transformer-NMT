@@ -12,7 +12,7 @@ def translate_batch(model, converter, src, tgt=None):
     :param converter: TokenSentenceConverter
     :param src: 一个英文句子列表
     :param tgt: target
-    :return: predicts: 中文句子列表
+    :return: predicts: 一个zip
     """
     src = [full_width2half_width(s) for s in src]
     if tgt is not None:
@@ -22,7 +22,7 @@ def translate_batch(model, converter, src, tgt=None):
                                              for sen in src],
                                             batch_first=True)
     decode = beam_search(model, token, num_beams=5)
-    predicts = [converter.token2sentence(sen, 'cn').replace('<sos>', '').replace('<eos>', '') for sen in decode]
+    predicts = [re.sub('(<sos>)|(<eos>)', '', converter.token2sentence(sen, 'cn')) for sen in decode]
     if tgt is not None:
         bleus = [sentence_bleu([list(t)], list(p), weights=(0.25,) * 4, smoothing_function=fcn.method1)
                  for t, p in zip(tgt, predicts)]
