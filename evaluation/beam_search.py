@@ -6,7 +6,7 @@ class BeamHypotheses(object):
     每个样本绑定一个该容器,该容器将维护不大于num_beams个最优序列,当往该容器中添加
     一个新的序列且序列数大于num_beams时,将删除分数最低的序列
     """
-    def __init__(self, num_beams, max_length):
+    def __init__(self, num_beams, max_length, length_penalty):
         """
         Initialize n-best list of hypotheses.
         """
@@ -14,6 +14,7 @@ class BeamHypotheses(object):
         self.num_beams = num_beams
         self.beams = []  # 存储最优的几个序列
         self.worst_score = 1e9
+        self.length_penalty = length_penalty
 
     def __len__(self):
         """
@@ -25,7 +26,7 @@ class BeamHypotheses(object):
         """
         Add a new hypothesis to the list.
         """
-        score = sum_logprobs / sentence.shape[0]
+        score = sum_logprobs / sentence.shape[0] ** self.length_penalty
         if len(self) < self.num_beams or score > self.worst_score:
             # 可更新的情况：数量未饱和或超过最差得分
             self.beams.append((score, sentence))
@@ -47,17 +48,18 @@ class BeamHypotheses(object):
             return False
         if cur_len is None:
             cur_len = self.max_length
-        cur_score = best_sum_logprobs / cur_len
+        cur_score = best_sum_logprobs / cur_len ** self.length_penalty
         # 是否最高分比当前保存的最低分还差
         ret = self.worst_score >= cur_score
         return ret
 
 
-def beam_search(model, src_sens: torch.Tensor, num_beams=3):
+def beam_search(model, src_sens: torch.Tensor, num_beams=3, length_penalty=0.9):
     """
     :param model: Transformer
     :param src_sens: (B, L)
     :param num_beams: 单步搜索空间
+    :param length_penalty: 长度惩罚系数
     """
     batch_size, length = src_sens.shape
     max_length = min(max_seq_len, 2 * length + 2)
@@ -66,7 +68,7 @@ def beam_search(model, src_sens: torch.Tensor, num_beams=3):
     src_sens = src_sens.repeat_interleave(num_beams, 0)
     # 为每个句子构造一个存储beam_size个可能序列及它们的得分的容器
     generated_sens = [
-        BeamHypotheses(num_beams, max_length)
+        BeamHypotheses(num_beams, max_length, length_penalty)
         for _ in range(batch_size)
     ]
     # 为每个句子初始化beam_size个得分
