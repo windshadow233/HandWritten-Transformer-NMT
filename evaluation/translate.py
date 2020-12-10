@@ -1,3 +1,4 @@
+import re
 from evaluation.beam_search import *
 from data.utils import full_width2half_width
 
