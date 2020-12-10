@@ -47,20 +47,21 @@ class TokenSentenceConverter(object):
 
 
 class CorpusDataset(Dataset):
-    def __init__(self, src_file, tgt_file, converter: TokenSentenceConverter):
+    def __init__(self, src_file, tgt_file, converter: TokenSentenceConverter, to_token=True):
         with open(src_file, 'r', encoding='utf-8') as f:
             self.src_sentences = f.readlines()
         with open(tgt_file, 'r', encoding='utf-8') as f:
             self.tgt_sentences = f.readlines()
         self.converter = converter
+        self.to_token = to_token
 
     def __len__(self):
         return len(self.src_sentences)
 
-    def __getitem__(self, item, to_token=True):
+    def __getitem__(self, item):
         src_sen = self.src_sentences[item].strip()
         tgt_sen = self.tgt_sentences[item].strip()
-        if to_token:
+        if self.to_token:
             src_token = self.converter.sentence2token(src_sen, 'en')
             tgt_token = self.converter.sentence2token(tgt_sen, 'cn')
             return src_token, tgt_token
