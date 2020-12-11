@@ -34,8 +34,12 @@ batch_size = 32
 dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=False,
                         collate_fn=lambda x: ([s[0] for s in x], [s[1] for s in x]))
 bleu_ = 0
-for src, tgt in tqdm.tqdm(dataloader):
-    result, s = translate_batch(model, converter, src, tgt)
-    bleu_ += sum(map(lambda x: x[-1], result))
+count = 0
+with torch.no_grad(), tqdm.tqdm(dataloader) as t:
+    for src, tgt in t:
+        result, s = translate_batch(model, converter, src, tgt)
+        count += len(tgt)
+        bleu_ += sum(map(lambda x: x[-1], result))
+        print(f'BLEU: {bleu_ / count}')
 with open('data/results/test_results.txt', 'a+', encoding='utf-8') as f:
     f.write(f'\nTotal BLEU: {bleu_ / len(dataloader.dataset)}')
