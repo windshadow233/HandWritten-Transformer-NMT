@@ -4,7 +4,7 @@ from collections import Counter
 from tqdm import tqdm
 import nltk
 import pickle
-from utils import *
+from data.utils import *
 from config import *
 
 
