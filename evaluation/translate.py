@@ -23,14 +23,15 @@ def translate_batch(model, converter, src, tgt=None):
                                             batch_first=True)
     decode = beam_search(model, token, num_beams=5)
     predicts = [re.sub('(<sos>)|(<eos>)', '', converter.token2sentence(sen, 'cn')) for sen in decode]
+    translate_str = ''
     if tgt is not None:
         bleus = [sentence_bleu([list(t)], list(p), weights=(0.25,) * 4, smoothing_function=fcn.method1)
                  for t, p in zip(tgt, predicts)]
-        for s, p, t, b in zip(src, predicts, tgt, bleus):
-            print(f'Src  | {s}\nTgt  | {t}\nPred | {p}\nBLEU | {b}\n')
+        for s, t, p, b in zip(src, tgt, predicts, bleus):
+            translate_str += f'Src  | {s}\nTgt  | {t}\nPred | {p}\nBLEU | {b}\n\n'
         predicts = zip(src, tgt, predicts, bleus)
     else:
         for s, p in zip(src, predicts):
-            print(f'Src  | {s}\nPred | {p}\n')
+            translate_str += f'Src  | {s}\nPred | {p}\n\n'
         predicts = zip(src, predicts)
-    return predicts
+    return predicts, translate_str
