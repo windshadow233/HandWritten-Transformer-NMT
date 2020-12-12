@@ -25,7 +25,7 @@ def translate_batch(model, converter, src, tgt=None):
     predicts = [re.sub('(<sos>)|(<eos>)', '', converter.token2sentence(sen, 'cn')) for sen in decode]
     translate_str = ''
     if tgt is not None:
-        bleus = [sentence_bleu([list(t)], list(p), weights=(0.25,) * 4, smoothing_function=fcn.method1)
+        bleus = [sentence_bleu([list(t)], list(p), weights=(0.25,) * 4, smoothing_function=fcn.method2)
                  for t, p in zip(tgt, predicts)]
         for s, t, p, b in zip(src, tgt, predicts, bleus):
             translate_str += f'Src  | {s}\nTgt  | {t}\nPred | {p}\nBLEU | {b}\n\n'
