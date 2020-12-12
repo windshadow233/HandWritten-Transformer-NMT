@@ -26,7 +26,7 @@ with torch.no_grad(), tqdm.tqdm(range(batches)) as t:
         translate_result += s
         bleu_ += sum(map(lambda x: x[-1], result))
 translate_result += f'Top 50 BLEU: {bleu_ / batches / batch_size}'
-with open('data/results/test_results.txt', 'w', encoding='utf-8') as f:
+with open('evaluation/test_results.txt', 'w', encoding='utf-8') as f:
     f.write(translate_result)
 
 
@@ -41,5 +41,5 @@ with torch.no_grad(), tqdm.tqdm(dataloader) as t:
         count += len(tgt)
         bleu_ += sum(map(lambda x: x[-1], result))
         print(f'BLEU: {bleu_ / count}')
-with open('data/results/test_results.txt', 'a+', encoding='utf-8') as f:
+with open('evaluation/test_results.txt', 'a+', encoding='utf-8') as f:
     f.write(f'\nTotal BLEU: {bleu_ / len(dataloader.dataset)}')
