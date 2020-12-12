@@ -1,0 +1,253 @@
+Top 50 Results:
+
+Src  | Results The key nursing methods were to promote nurses fundamental diathesis to carry out mental care for the patients and the nursing during acetazolamide stress brain perfusion SPECT.
+Tgt  | 结果提高护理人员的基本素质;做好患者的心理护理和乙酰唑胺负荷脑血流灌注显像中的护理是关键性的护理措施.
+Pred | 结果护理方法是促进护理人员在护理过程中进行脑静脉注注注注注注注注药的重要方法.
+BLEU1: 0.3124351292514659 | BLEU2: 0.13194847087543055 | BLEU3: 0.058037485309869824 | BLEU4: 0.03973737732928025
+
+Src  | Notwithstanding his youth, Master Andrea was a very skilful and intelligent boy.
+Tgt  | 另一方面, 纠正错误的浪费时间和抑制学生的积极性却是不言而喻的.
+Pred | 尽管他年轻, 安德鲁主人是个很聪明的男孩.
+BLEU1: 0.16152545898978898 | BLEU2: 0.056405715837704096 | BLEU3: 0.029613000814794656 | BLEU4: 0.031171579805046992
+
+Src  | Worryingly, with only weeks before the law comes into effect, it has not yet been announced who will oversee it.
+Tgt  | 更令人焦虑的是,距这部法律实施已经没有几周时间了,但是现在还没有宣布谁来监督这部法律.
+Pred | 在法律效力发生之前几周,它还没有被宣布监管它的人.
+BLEU1: 0.29953984982152104 | BLEU2: 0.1168205414303932 | BLEU3: 0.04056268799666431 | BLEU4: 0.02116314156347703
+
+Src  | The impact of the car hitting the tree killed the driver.
+Tgt  | 司机死于汽车撞到树后产生的冲击力.
+Pred | 汽车撞击树的影响使司机死了.
+BLEU1: 0.5918863478039522 | BLEU2: 0.28825633821621055 | BLEU3: 0.18625794161662834 | BLEU4: 0.06725981225044911
+
+Src  | The study of contacts of rough surfaces is a young and interdisciplinary field.
+Tgt  | 粗糙表面接触研究是一门年轻的交叉学科.
+Pred | 粗糙表面接触的研究是一门年轻而且十分严峻的领域.
+BLEU1: 0.64 | BLEU2: 0.5 | BLEU3: 0.43478260869565216 | BLEU4: 0.36363636363636365
+
+Src  | If you know someone who is a consultant, you should talk to that person.
+Tgt  | 如果你知道有人是顾问,你应该找人.
+Pred | 如果你知道那个人是顾问,你应该和那个人谈谈.
+BLEU1: 0.6956521739130435 | BLEU2: 0.5454545454545454 | BLEU3: 0.47619047619047616 | BLEU4: 0.4
+
+Src  | Some plants flower year in and year out.
+Tgt  | 有些植物一年到头都开花.
+Pred | 有些植物在一年中种花.
+BLEU1: 0.6848255372116968 | BLEU2: 0.4980549361539613 | BLEU3: 0.2739302148846787 | BLEU4: 0.20291127028494718
+
+Src  | Demographic and clinical characteristics of individuals in a bipolar disorder case registry.
+Tgt  | 双相障碍档案上的人口统计的特点和临床特征.
+Pred | 在注册表中,人口异常症患者的临床特征和临床特点
+BLEU1: 0.4583333333333333 | BLEU2: 0.3043478260869566 | BLEU3: 0.18181818181818182 | BLEU4: 0.14285714285714285
+
+Src  | One of the program's priorities is to combine family and work life and develop more flexible and effective forms of work organization and support services.
+Tgt  | 该项目的一个优先事项就是兼顾家庭与工作生活,制订更加灵活和更加有效的工作组织形式和支助服务形式.
+Pred | 该项目的优先事项之一是将家庭工作和生活结合起来,并且更加灵活、更有效地支持和发展工作组织的工作形式.
+BLEU1: 0.7058823529411765 | BLEU2: 0.4 | BLEU3: 0.22448979591836735 | BLEU4: 0.10416666666666666
+
+Src  | Both silhouette preserving and shading preserving criteria are satisfied by applying a new error metric-constrained normal cone to view-independent simplification.
+Tgt  | 算法为地表的简化提出一种新的基于受限法向锥的误差计算方法,使得模型简化具有轮廓保持和光照保持特性.
+Pred | 采用新的圆柱形圆柱形误差保存和保存标准,使图像保存和保存标准得到满意.
+BLEU1: 0.2234400153452131 | BLEU2: 0.07660800526121592 | BLEU3: 0.01971529547163645 | BLEU4: 0.02031272866774665
+
+Src  | Information technology - Open Systems Interconnection - Connection-oriented presentation protocol: Protocol specification.
+Tgt  | 信息技术.开放系统互连.面向连接型表示协议:协议规范
+Pred | 信息技术 - 开放式 - 互联协议 - 协议规范: 规范.
+BLEU1: 0.5333333333333333 | BLEU2: 0.3103448275862069 | BLEU3: 0.17857142857142858 | BLEU4: 0.11111111111111109
+
+Src  | Alan Beattie is the World Trade Editor of the Financial Times, leading the paper's coverage of trade policy and economic globalisation.
+Tgt  | 艾伦•贝蒂是金融时报的世贸编辑,负责领导该报覆盖有关贸易政策与经济全球化的报道.
+Pred | 艾伦·斯坦克是世界金融时代的贸易编辑,本文主要研究了全球化和经济政策的全球化.
+BLEU1: 0.5604438253821875 | BLEU2: 0.2749111295074276 | BLEU3: 0.10259841196927917 | BLEU4: 0.026342835505625738
+
+Src  | She kind of hoped he would come.
+Tgt  | 她多少有点希望他会来.
+Pred | 她希望他能来.
+BLEU1: 0.49412835675678934 | BLEU2: 0.32269606971871956 | BLEU3: 0.18823937400258642 | BLEU4: 0.11294362440155187
+
+Src  | In oil seeds they may occupy a large fraction of total volume of reserve cells.
+Tgt  | 在油质种子中,它们可占据贮藏细胞总体积的大部分.
+Pred | 在种子油中,它们可以占用大量的储存细胞.
+BLEU1: 0.6237948594879862 | BLEU2: 0.2865557635772936 | BLEU3: 0.1723643690690488 | BLEU4: 0.13645512551299702
+
+Src  | The source of the starting material need not be identified, but may be requested.
+Tgt  | 起始原料的来源通常无需说明, 但有时会要.
+Pred | 起源不需要识别,但可以要求.
+BLEU1: 0.3234830185134045 | BLEU2: 0.043323618550902374 | BLEU3: 0.046656204593279495 | BLEU4: 0.05054422164271945
+
+Src  | He'll hit the ceiling if I ask to change again.
+Tgt  | 如果我要求再改变的话他会气疯的.
+Pred | 我要求再次更改天花板,他会撞到天花板.
+BLEU1: 0.45 | BLEU2: 0.2631578947368421 | BLEU3: 0.16666666666666669 | BLEU4: 0.11764705882352941
+
+Src  | Mao Zedong's agricultural economic thought is through the whole process of Chinese revolution and construction .
+Tgt  | 毛泽东的农业经济思想贯穿着中国革命和建设的全过程.
+Pred | 毛泽东农业经济思想通过中国革命和建设的整个过程来实现.
+BLEU1: 0.75 | BLEU2: 0.5925925925925926 | BLEU3: 0.46153846153846156 | BLEU4: 0.36
+
+Src  | Comprehensive multi-level exploration of buried active fault: an example of Yinchuan buried active fault.
+Tgt  | 隐伏活动断层的多层次综合探测&以银川隐伏活动断层为例
+Pred | 综合探索活动层次的故障: 一个活跃的故障挖掘例.
+BLEU1: 0.40481954243690227 | BLEU2: 0.19167591971444237 | BLEU3: 0.0800038621416803 | BLEU4: 0.04182020066496925
+
+Src  | Third the process of fighting for the leadership we must pay attention to the party and the people.
+Tgt  | 第三,在争取领导权过程中对党和人民群众的的重视.
+Pred | 第三步,我们必须注意党和人民的领导过程.
+BLEU1: 0.545820502051988 | BLEU2: 0.2865557635772936 | BLEU3: 0.1292732768017866 | BLEU4: 0.09097008367533131
+
+Src  | Analysis of the protection of all-bridged GTR resistance welding inverter.
+Tgt  | 全桥式GTR逆变电阻焊电源的保护分析
+Pred | 分析了高温变频器的防护作用.
+BLEU1: 0.3005909172301144 | BLEU2: 0.10735389901075512 | BLEU3: 0.05780594562117584 | BLEU4: 0.06262310775627382
+
+Src  | The purpose of my thesis is to find out the suitable credit risk measurement model in our country, which can improve the credit risk management level of our banks.
+Tgt  | 本文研究的主旨在于通过分析和比较现代信用风险度量模型,试图找出适合我国实际的信用风险模型,以提高我国银行业的竞争力.
+Pred | 本文的目的是了解我国银行信贷风险评估模型,提高我国银行信贷风险管理水平.
+BLEU1: 0.33738356937235414 | BLEU2: 0.18091582705474063 | BLEU3: 0.09304242534243802 | BLEU4: 0.06385264484284964
+
+Src  | Ben's hobby is collecting stamps. He has many beautiful stamps. He is showing them to his classmates.
+Tgt  | 本的业余爱好是集邮.他有许多漂亮的邮票.他正在把它们给他的同学们看.
+Pred | 本的爱好是收集邮票.他有许多漂亮的邮票.他正在给他的同学看邮票.
+BLEU1: 0.8255448127754788 | BLEU2: 0.6458464806842646 | BLEU3: 0.5151620021880351 | BLEU4: 0.43839276264628874
+
+Src  | While travelling, they entrusted their children to the care of baby sitter.
+Tgt  | 他们在若干名士兵的保护下外出旅行.
+Pred | 他们在旅行时委托孩子照顾宝宝宝.
+BLEU1: 0.3868171435114312 | BLEU2: 0.23485326570336895 | BLEU3: 0.12525507504179678 | BLEU4: 0.0671009330581054
+
+Src  | Pour into the prepared baking pan.
+Tgt  | 倒入备好的玻璃烤盘内.
+Pred | 准备好了把锅倒入锅里.
+BLEU1: 0.5 | BLEU2: 0.2727272727272727 | BLEU3: 0.10000000000000002 | BLEU4: 0.11111111111111109
+
+Src  | Meanwhile, China's political cycle may exacerbate risks of an asset bubble.
+Tgt  | 同时,中国的政治周期也可能加剧资产泡沫风险.
+Pred | 与此同时, 中国政治周期可能会影响资产泡沫的风险.
+BLEU1: 0.7692307692307693 | BLEU2: 0.52 | BLEU3: 0.2916666666666667 | BLEU4: 0.13043478260869565
+
+Src  | It was in light of the above spirit that China took a constructive part in the Security Council discussions. We are ready to stay in communication with relevant parties over this.
+Tgt  | 中方秉承上述精神,以建设性的态度参加了安理会有关讨论,我们愿就此与有关各方继续保持沟通.
+Pred | 鉴于上述精神,中国参与了安理会的一部分,我们准备与这次建设性的会谈中的各方商讨.
+BLEU1: 0.5296609276308055 | BLEU2: 0.31669309631258574 | BLEU3: 0.20880863493137528 | BLEU4: 0.11905755500473149
+
+Src  | Many put plenty of stock in a team's success.
+Tgt  | 很多人将球队的战绩看得很重.
+Pred | 许多股票在团队的成功中占据了很大的位置.
+BLEU1: 0.2857142857142857 | BLEU2: 0.10000000000000002 | BLEU3: 0.05263157894736841 | BLEU4: 0.05555555555555554
+
+Src  | In his mind a voice cried, Now is the time of testing.
+Tgt  | 他脑海中有个声音在大喊, 现在正是一决雌雄的时候了.
+Pred | 他的心声里哭了起来, 现在是测试时间的时候.
+BLEU1: 0.4712516493468411 | BLEU2: 0.2273871594750492 | BLEU3: 0.1588100796333677 | BLEU4: 0.08337529180751807
+
+Src  | These patients also were receiving drugs known as azathioprine or 6 - mercaptopurine.
+Tgt  | 这些患者同时接受了硫唑嘌呤或巯基嘌呤治疗.
+Pred | 这些病人也被称为 抗 血液或者血液病毒药物.
+BLEU1: 0.2608695652173913 | BLEU2: 0.0909090909090909 | BLEU3: 0.047619047619047616 | BLEU4: 0.05000000000000001
+
+Src  | The use of calcium sulfate requires an greater capital investment .
+Tgt  | 使用硫酸钙做原料,需要更多的基建投资.
+Pred | 硫酸钙的使用需要更多的投资.
+BLEU1: 0.6530277015501216 | BLEU2: 0.49976609812509304 | BLEU3: 0.32292578648082937 | BLEU4: 0.17491813434378256
+
+Src  | Mice doing obeisance for peach.
+Tgt  | 景点名称:老鼠拜桃
+Pred | 老鼠为桃做事情.
+BLEU1: 0.3922208455931535 | BLEU2: 0.22062422564614886 | BLEU3: 0.12607098608351364 | BLEU4: 0.1470828170974326
+
+Src  | In the paper analysis of wear mechanism of circular diamond saw blades with several typical segment structures being widely used in stone processing area.
+Tgt  | 本文对目前石材加工领域广泛使用的具有几种典型节块结构的金刚石圆锯片的磨损机理进行了一些分析.
+Pred | 本文分析了圆柱形金刚石磨削磨削机理,并在典型的石头加工领域得到了广泛的应用.
+BLEU1: 0.5401051566216177 | BLEU2: 0.2345193443225446 | BLEU3: 0.0875846199926948 | BLEU4: 0.04500876305180147
+
+Src  | How did leaving Portugal for Spain affect you development as a coach?
+Tgt  | 离开葡萄牙去西班牙对你发展成一名教练有什么影响?
+Pred | 葡萄牙如何影响你作为教练?
+BLEU1: 0.3064728578165062 | BLEU2: 0.16502384651658025 | BLEU3: 0.07151033349051812 | BLEU4: 0.03900563644937351
+
+Src  | Object used to create a new child node at the beginning of the list of child nodes of the current node.
+Tgt  | 对象,该对象用于在当前节点的子节点列表的开始处创建一个新的子节点.
+Pred | 对象在当前节点的节点列表的初始化时,用来创建一个新的子节点.
+BLEU1: 0.7880842028055132 | BLEU2: 0.6032249453573063 | BLEU3: 0.49922064443363284 | BLEU4: 0.42010308694526693
+
+Src  | The calculation results of unsteady flow in an exhaust manifold model are presented.
+Tgt  | 最后对一根模型排气管进行了不稳定的流场计算.
+Pred | 介绍了一种不稳定的排气模型的计算结果.
+BLEU1: 0.5977577659364746 | BLEU2: 0.3146093504928813 | BLEU3: 0.14232327760392252 | BLEU4: 0.10046349007335706
+
+Src  | To avoid these negative effects bring a false academic prosperity, academic theorists have already explored the issue too much.
+Tgt  | 为尽可能地避免这些负面影响给高校学术带来虚假繁荣,理论界已经对高校学术异化问题进行了许多的探索.
+Pred | 为了避免这些负面影响,学术界对学术界的兴趣已经探讨了太多的问题.
+BLEU1: 0.47787264098571114 | BLEU2: 0.24640308050825732 | BLEU3: 0.13695853606414302 | BLEU4: 0.1213061319425267
+
+Src  | The design route deviation succinct isgraceful, the vitality long-time clothing to the manufacture.
+Tgt  | 设计路线偏向于制作简洁优雅、生命力长久的服饰.
+Pred | 设计路线偏离了生活力, 使生活力向生产服装.
+BLEU1: 0.45700840865004905 | BLEU2: 0.21717341733370096 | BLEU3: 0.18201200690824462 | BLEU4: 0.14333445544024265
+
+Src  | The company doubled up with hilarity.
+Tgt  | 大伙儿乐得弯下腰来.
+Pred | 公司以两倍的速度加倍.
+BLEU1: 0.16666666666666669 | BLEU2: 0.0909090909090909 | BLEU3: 0.10000000000000002 | BLEU4: 0.11111111111111109
+
+Src  | The rock left a chip in the paint.
+Tgt  | 石头在油漆留下了一道缺口.
+Pred | 石头在油漆中留下了一块芯片.
+BLEU1: 0.7333333333333333 | BLEU2: 0.5714285714285714 | BLEU3: 0.46153846153846156 | BLEU4: 0.3333333333333333
+
+Src  | Wish you all A Fantastic Happy Rabbit Year 2011.
+Tgt  | 祝大家兔年快乐,福星高照.恭喜恭喜!
+Pred | 祝你们201年快乐的兔子快乐.
+BLEU1: 0.3581947044716171 | BLEU2: 0.1637461506155964 | BLEU3: 0.11696153615399742 | BLEU4: 0.06297928869830631
+
+Src  | Do you, Princeton Girl, feel like you made the right choice meeting me here tonight?
+Tgt  | 普林斯顿女孩儿,你觉得今天晚上来见我的决定做的对吗?
+Pred | 你觉得自己今晚在这里见到我了,普林斯顿女孩吗?
+BLEU1: 0.6217138944082126 | BLEU2: 0.3434531999799844 | BLEU3: 0.23937647271332246 | BLEU4: 0.1671835682442252
+
+Src  | eat, drink, and be merry -- that's his philosophy.
+Tgt  | 吃喝玩乐,那就是他的人生哲学
+Pred | 吃,喝酒,快乐,那是他的哲学.
+BLEU1: 0.6875 | BLEU2: 0.4 | BLEU3: 0.21428571428571425 | BLEU4: 0.07692307692307693
+
+Src  | He was able to make other noises , for instance , short , cough-like grunts , accompanying his pantomimed communications .
+Tgt  | 他可以发出噪音,例如短暂、像是咳嗽呼噜声并且伴随著手势上的沟通.
+Pred | 例如,他能够发出其他声音, 例如, 短暂的声音, 他的通信, 伴随着他的不满意.
+BLEU1: 0.3902439024390244 | BLEU2: 0.15 | BLEU3: 0.025641025641025644 | BLEU4: 0.026315789473684213
+
+Src  | on the other hand, we found a new and easier way to reconstruct nuclei in the central nervous system.
+Tgt  | 另一方面找到了一种较简单易行的立体重建中枢神经系统神经核团的新方法.
+Pred | 另一方面,我们发现一种新的核心方式,更容易重建中枢神经系统.
+BLEU1: 0.5928593451581257 | BLEU2: 0.350069327617179 | BLEU3: 0.27160551280643197 | BLEU4: 0.21879332976073687
+
+Src  | The absence of it is not an assured ground of condemnation, but the presence of it is an invariable sign of goodness of heart.
+Tgt  | 它的缺失虽然不能成为你被谴责的理由,但是存有爱美之心却是拥有一颗善良之心的不变的标志.
+Pred | 这不是一个保证的地方,而是对于善良的心脏的表现.
+BLEU1: 0.2356062889856879 | BLEU2: 0.03775741810668075 | BLEU3: 0.01969952249044213 | BLEU4: 0.020594955330916775
+
+Src  | We need not have hurried.
+Tgt  | 我们当时实在不必那么匆忙.
+Pred | 我们不需要急忙忙忙忙忙忙忙忙忙忙忙忙忙忙忙忙忙忙忙忙忙忙忙.
+BLEU1: 0.1935483870967742 | BLEU2: 0.10000000000000002 | BLEU3: 0.034482758620689655 | BLEU4: 0.03571428571428572
+
+Src  | Return result sets that include many rows, from several thousand to several million rows.
+Tgt  | 返回包括很多行的结果集,从数千行到数百万行.
+Pred | 返回结果集包括许多行, 从几百万行到几百万行.
+BLEU1: 0.75 | BLEU2: 0.43478260869565216 | BLEU3: 0.18181818181818182 | BLEU4: 0.09523809523809525
+
+Src  | EXAMPLE " Whoever wins in Florida will have enough votes to break the tie. ".
+Tgt  | 谁赢了弗 罗里 达谁就能打破僵局获得足够的选票赢得比赛.
+Pred | 例如, 在佛罗里达,谁会有足够的票, 打破领带.
+BLEU1: 0.4740297659387439 | BLEU2: 0.17635035935221127 | BLEU3: 0.07360710651222732 | BLEU4: 0.038476442040482464
+
+Src  | The judge had made a terrible bluder, so he had to step down.
+Tgt  | 法官犯了大错,所以他只好下台.
+Pred | 法官已经做了一个可怕的小丑,所以他只得走下去.
+BLEU1: 0.4583333333333333 | BLEU2: 0.2608695652173913 | BLEU3: 0.18181818181818182 | BLEU4: 0.14285714285714285
+
+Src  | That colored one is over beautiful.
+Tgt  | 那个彩色的很漂亮.
+Pred | 那个颜色的是美丽的.
+BLEU1: 0.5454545454545454 | BLEU2: 0.3 | BLEU3: 0.11111111111111109 | BLEU4: 0.12500000000000003
+
+Top 50 BLEU1: 0.49092882047696934 | BLEU2: 0.2813421330196027 | BLEU3: 0.17405325953259448 | BLEU4: 0.1253659404571853
