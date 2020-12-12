@@ -25,13 +25,20 @@ def translate_batch(model, converter, src, tgt=None):
     predicts = [re.sub('(<sos>)|(<eos>)', '', converter.token2sentence(sen, 'cn')) for sen in decode]
     translate_str = ''
     if tgt is not None:
-        bleus = [sentence_bleu([list(t)], list(p), weights=(0.25,) * 4, smoothing_function=fcn.method2)
+        bleu1 = [sentence_bleu([list(t)], list(p), weights=(1, 0, 0, 0), smoothing_function=fcn.method2)
                  for t, p in zip(tgt, predicts)]
-        for s, t, p, b in zip(src, tgt, predicts, bleus):
-            translate_str += f'Src  | {s}\nTgt  | {t}\nPred | {p}\nBLEU | {b}\n\n'
-        predicts = zip(src, tgt, predicts, bleus)
+        bleu2 = [sentence_bleu([list(t)], list(p), weights=(0, 1, 0, 0), smoothing_function=fcn.method2)
+                 for t, p in zip(tgt, predicts)]
+        bleu3 = [sentence_bleu([list(t)], list(p), weights=(0, 0, 1, 0), smoothing_function=fcn.method2)
+                 for t, p in zip(tgt, predicts)]
+        bleu4 = [sentence_bleu([list(t)], list(p), weights=(0, 0, 0, 1), smoothing_function=fcn.method2)
+                 for t, p in zip(tgt, predicts)]
+        for s, t, p, b1, b2, b3, b4 in zip(src, tgt, predicts, bleu1, bleu2, bleu3, bleu4):
+            translate_str += f'Src  | {s}\nTgt  | {t}\nPred | {p}\nBLEU1: {b1} | BLEU2: {b2} | BLEU3: {b3} | BLEU4: {b4}\n\n'
+        predicts = {'src': src, 'tgt': tgt, 'predict': predicts,
+                    'bleu1': bleu1, 'bleu2': bleu2, 'bleu3': bleu3, 'bleu4': bleu4}
     else:
         for s, p in zip(src, predicts):
             translate_str += f'Src  | {s}\nPred | {p}\n\n'
-        predicts = zip(src, predicts)
+        predicts = {'src': src, 'predict': predicts}
     return predicts, translate_str
