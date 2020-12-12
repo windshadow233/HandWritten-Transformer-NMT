@@ -29,7 +29,7 @@ with torch.no_grad(), tqdm.tqdm(range(batches)) as t:
         bleu3 += sum(result.get('bleu3'))
         bleu4 += sum(result.get('bleu4'))
 translate_result += f'Top 50 BLEU1: {bleu1 / batches / batch_size} | BLEU2: {bleu2 / batches / batch_size} | ' \
-                    f'BLEU3: {bleu3 / batches / batch_size} | BLEU4: {bleu4 / batches / batch_size}'
+                    f'BLEU3: {bleu3 / batches / batch_size} | BLEU4: {bleu4 / batches / batch_size}\n'
 with open('evaluation/test_results.txt', 'w', encoding='utf-8') as f:
     f.write(translate_result)
 
